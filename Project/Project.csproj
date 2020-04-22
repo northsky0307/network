@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeFile1.cs" />
+    <Compile Include="CodeFile2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
