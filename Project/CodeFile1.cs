@@ -6,13 +6,13 @@ namespace test
 {
     class HelloWord
     {
-        /*public static void Main()
+        public static void Main()
         {
             Form frm = new Form();
             frm.Paint += new PaintEventHandler(frm_Paint); //注册Paint事件处理程序
             frm.Click += new System.EventHandler(frm_Click);//注册Click事件处理程序
             Application.Run(frm);
-        }*/
+        }
 
         // Click事件处理程序
         static void frm_Click(object sender, EventArgs e)
