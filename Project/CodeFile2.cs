@@ -1,6 +1,6 @@
 ﻿namespace test
 {
-    class main
+    /*class main
     {
         public static void Main()
         {
@@ -9,5 +9,5 @@
             frm.Click += new System.EventHandler(frm_Click);//注册Click事件处理程序
             Application.Run(frm);
         }
-    }
+    }*/
 }
