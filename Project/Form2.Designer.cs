@@ -129,9 +129,11 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+
             this.comboBox1.Items.AddRange(new object[] {
             "用户",
             "管理员"});
+
             this.comboBox1.Location = new System.Drawing.Point(385, 336);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
