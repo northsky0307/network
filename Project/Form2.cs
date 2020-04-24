@@ -49,5 +49,15 @@ namespace Project
         {
             Application.Exit(); //点击退出
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label5.Text = comboBox1.SelectedItem.ToString();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
