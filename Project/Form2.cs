@@ -36,7 +36,7 @@ namespace Project
                 Form1 form = new Form1();
                 form.Show();                
                 this.Hide();
-                Application.Run(form);
+                
             }
         }
 
@@ -48,6 +48,11 @@ namespace Project
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit(); //点击退出
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label5.Text = comboBox1.SelectedItem.ToString();
         }
     }
 }
