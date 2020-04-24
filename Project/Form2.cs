@@ -37,7 +37,6 @@ namespace Project
                 form.Show();                
                 this.Hide();
                 //Application.Run(form);
-
             }
         }
 
@@ -54,6 +53,11 @@ namespace Project
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             label5.Text = comboBox1.SelectedItem.ToString();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
