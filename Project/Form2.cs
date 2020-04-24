@@ -36,7 +36,7 @@ namespace Project
                 Form1 form = new Form1();
                 form.Show();                
                 this.Hide();
-                Application.Run(form);
+                //Application.Run(form);
             }
         }
 
