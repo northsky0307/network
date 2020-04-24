@@ -168,8 +168,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
 
-
-
             this.ClientSize = new System.Drawing.Size(1067, 562);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox1);
