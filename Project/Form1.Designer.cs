@@ -1,6 +1,6 @@
 ﻿namespace Project
 {
-    partial class user_query
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
