@@ -14,9 +14,9 @@ namespace Project
     {
         void MethodToImplement();
     }
-    public partial class Form2 : Form //,IMyForm
+    public partial class sign_in : Form //,IMyForm
     {
-        public Form2()
+        public sign_in()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace Project
             if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim()) //用户名密码验证
             {
                 //界面替换
-                Form1 form = new Form1();
+                user_query form = new user_query();
                 form.Show();                
                 this.Hide();
                 //Application.Run(form);
