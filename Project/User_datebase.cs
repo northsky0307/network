@@ -31,8 +31,8 @@ namespace Project
             else
             {
                 User_Information now_user = new User_Information(name, password,type);
-                now_user.Set_Number = Database_Size
-                (User_Information)User_Information_Index[num];
+                //now_user.Set_Number = Database_Size
+                //(User_Information)User_Information_Index[num];
             }
             System.Console.WriteLine(Database_Size);
             return 0;
