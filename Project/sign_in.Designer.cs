@@ -164,10 +164,18 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        /// <summary>
+        /// 用户名
+        /// </summary>
+        private System.Windows.Forms.Label label1;   //用户名
+        /// <summary>
+        /// 密码
+        /// </summary>
+        private System.Windows.Forms.Label label2;  //密码
+        /// <summary>
+        /// 登陆系统标题
+        /// </summary>
+        private System.Windows.Forms.Label label3;  //登陆系统标题
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
