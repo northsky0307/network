@@ -74,12 +74,12 @@ namespace Project
 
         }
 
-        private void label1_Click(object sender, EventArgs e) //用户名  lable1
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e) //密码  lable2
+        private void label2_Click(object sender, EventArgs e) 
         {
 
         }
