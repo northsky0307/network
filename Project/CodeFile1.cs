@@ -12,7 +12,7 @@ namespace Project
         {
             //Form1 用户窗口1  Form2  登陆界面
             //窗口2的引用
-            sign_in form1 = new sign_in();
+            Form2 form1 = new Form2();
            // form1.Show();
             Application.Run(form1);
             /*Form frm = new Form();

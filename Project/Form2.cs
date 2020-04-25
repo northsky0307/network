@@ -14,9 +14,9 @@ namespace Project
     {
         void MethodToImplement();
     }
-    public partial class sign_in : Form //,IMyForm
+    public partial class Form2 : Form //,IMyForm
     {
-        public sign_in()
+        public Form2()
         {
             InitializeComponent();
         }
