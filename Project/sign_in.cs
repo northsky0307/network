@@ -28,17 +28,24 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = "test1";
+            string name = textBox1.Text.Trim() ;
+            string pass = textBox2.Text.Trim();
+            /*string name = "test1";
             string pass = "123456";
             string name2 = "admin1";
             string pass2 = "654321";
-            if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim()) //用户名密码验证
+            if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim()) //用户名密码验证*/
+            if (name == "1" && pass == "1") //用户名密码验证
             {
                 //界面替换
                 user_query form = new user_query();
                 form.Show();                
                 this.Hide();
                 //Application.Run(form);
+            }
+            if(name != "1")
+            {
+                label6.Show();
             }
         }
 
@@ -62,12 +69,7 @@ namespace Project
 
         }
 
-        private void label1_Click(object sender, EventArgs e) //用户名  lable1
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e) //密码  lable2
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }
