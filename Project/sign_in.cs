@@ -26,6 +26,11 @@ namespace Project
 
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string name = textBox1.Text.Trim() ;
