@@ -40,18 +40,19 @@ namespace Project
             string name2 = "admin1";
             string pass2 = "654321";
             if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim()) //用户名密码验证*/
-            if (name == "1" && pass == "1") //用户名密码验证
+            User_Information user = new User_Information("1", "1");
+
+
+            if (name == user.User_Name && pass == user.User_password) //用户名密码验证
             {
                 //界面替换
                 user_query form = new user_query();
-                form.Show();                
+                form.Show();
                 this.Hide();
+                //this.Dispose();
                 //Application.Run(form);
             }
-            if(name != "1")
-            {
 
-            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

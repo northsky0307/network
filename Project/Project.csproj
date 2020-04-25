@@ -40,6 +40,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="User_Information.cs" />
+    <Compile Include="CodeFile1.cs" />
     <Compile Include="user_history.cs">
       <SubType>Form</SubType>
     </Compile>
