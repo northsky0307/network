@@ -85,6 +85,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(289, 218);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(129, 21);
             this.textBox2.TabIndex = 4;
             // 
@@ -142,8 +143,10 @@
             // 
             // sign_in
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox1);
@@ -176,12 +179,33 @@
         /// 登陆系统标题
         /// </summary>
         private System.Windows.Forms.Label label3;  //登陆系统标题
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label5;
+        /// <summary>
+        /// 用户名输入
+        /// </summary>
+        private System.Windows.Forms.TextBox textBox1;//用户名输入
+        /// <summary>
+        /// 密码输入
+        /// </summary>
+        private System.Windows.Forms.TextBox textBox2;//密码输入
+        /// <summary>
+        /// 登录按钮
+        /// </summary>
+        private System.Windows.Forms.Button button1; //登录按钮
+        /// <summary>
+        /// 退出按钮
+        /// </summary>
+        private System.Windows.Forms.Button button2; //退出按钮
+        /// <summary>
+        /// 登陆类型
+        /// </summary>
+        private System.Windows.Forms.Label label4;  //登陆类型
+        /// <summary>
+        /// 登陆类型下拉框
+        /// </summary>
+        private System.Windows.Forms.ComboBox comboBox1; //登陆类型下拉框
+        /// <summary>
+        /// 无用项
+        /// </summary>
+        private System.Windows.Forms.Label label5;  //无用项
     }
 }

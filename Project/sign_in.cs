@@ -32,7 +32,9 @@ namespace Project
             string pass = "123456";
             string name2 = "admin1";
             string pass2 = "654321";
-            if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim()) //用户名密码验证
+            string name3 = "用户";
+            string name4 = "管理员";
+            if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim() && comboBox1.Text.Trim() == name3 ) //用户名密码验证
             {
                 //界面替换
                 user_query form = new user_query();
@@ -54,7 +56,7 @@ namespace Project
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label5.Text = comboBox1.SelectedItem.ToString();
+            //label5.Text = comboBox1.SelectedItem.ToString();
         }
 
         private void Form2_Load(object sender, EventArgs e)
