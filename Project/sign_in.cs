@@ -14,9 +14,9 @@ namespace Project
     {
         void MethodToImplement();
     }
-    public partial class sign_in : Form //,IMyForm
+    public partial class Sign_in : Form //,IMyForm
     {
-        public sign_in()
+        public Sign_in()
         {
             InitializeComponent();
         }
@@ -50,7 +50,7 @@ namespace Project
             }
             if(name != "1")
             {
-                label6.Show();
+
             }
         }
 

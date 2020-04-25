@@ -38,7 +38,7 @@ namespace Project
         private void button2_Click(object sender, EventArgs e)
         {
             //界面替换 点击退出登录按钮  回到登陆界面
-            sign_in form = new sign_in();
+            Sign_in form = new Sign_in();
             form.Show();
             this.Dispose();
         }

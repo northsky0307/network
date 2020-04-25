@@ -1,6 +1,6 @@
 ﻿namespace Project
 {
-    partial class sign_in
+    partial class Sign_in
     {
         /// <summary>
         /// Required designer variable.
