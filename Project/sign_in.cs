@@ -49,6 +49,7 @@ namespace Project
                 user_query form = new user_query();
                 form.Show();
                 this.Hide();
+                System.Console.WriteLine("user's type = " + user.Get_Type());
                 //this.Dispose();
                 //Application.Run(form);
             }

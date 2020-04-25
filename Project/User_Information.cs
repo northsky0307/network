@@ -13,10 +13,23 @@ namespace Project
         private bool User_type; //0 user 1 admins
         private int User_number; //数据库查询标号
 
-        public User_Information(string name, string password)
+        public User_Information(string name, string password, bool type = false)
         {
             this.User_Name = name;
             this.User_password = password;
+            if (type == false)
+            {
+                this.User_type = false;
+            }
+            else
+            {
+                this.User_type = true;
+            }
+        }
+
+        public bool Get_Type()
+        {
+            return this.User_type;
         }
     }
 }
