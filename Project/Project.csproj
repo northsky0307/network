@@ -73,6 +73,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="user_history.resx">
+      <DependentUpon>user_history.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="user_query.resx">
       <DependentUpon>user_query.cs</DependentUpon>
     </EmbeddedResource>
