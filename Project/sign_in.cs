@@ -28,9 +28,9 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = "test1";
-            string pass = "123456";
-            if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim()) //用户名密码验证
+            string name = textBox1.Text.Trim() ;
+            string pass = textBox2.Text.Trim();
+            if (name == "1" && pass == "1") //用户名密码验证
             {
                 //界面替换
                 user_query form = new user_query();
