@@ -41,7 +41,8 @@ namespace Project
             string pass2 = "654321";
             if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim()) //用户名密码验证*/
             User_Information user = new User_Information("1", "1");
-
+            User_datebase user_Datebase = new User_datebase();
+            //user_Datebase.Add_User_Information();
 
             if (name == user.User_Name && pass == user.User_password) //用户名密码验证
             {
