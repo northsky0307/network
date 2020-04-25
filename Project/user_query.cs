@@ -26,5 +26,21 @@ namespace Project
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //界面替换  点击查询历史按钮 进入历史界面
+            user_history form = new user_history();
+            form.Show();
+            this.Dispose();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //界面替换 点击退出登录按钮  回到登陆界面
+            sign_in form = new sign_in();
+            form.Show();
+            this.Dispose();
+        }
     }
 }

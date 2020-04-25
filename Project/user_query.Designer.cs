@@ -34,12 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(322, 308);
+            this.button1.Location = new System.Drawing.Point(292, 308);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 47);
             this.button1.TabIndex = 0;
@@ -91,19 +92,32 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "退出登录";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form1
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.Location = new System.Drawing.Point(524, 308);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(145, 47);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "查 询 历 史";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // user_query
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "user_query";
             this.Text = "用户查询系统";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -112,12 +126,34 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
+        
+        /// <summary>
+        /// 查询按钮
+        /// </summary>
+        private System.Windows.Forms.Button button1; // 查询按钮
+        /// <summary>
+        /// 资源名称文本
+        /// </summary>
+        private System.Windows.Forms.Label label1; // 资源名称文本
+        /// <summary>
+        /// 资源名称下拉框
+        /// </summary>
+        private System.Windows.Forms.ComboBox comboBox1; // 资源名称下拉框
+        /// <summary>
+        /// 操作类型文本
+        /// </summary>
+        private System.Windows.Forms.Label label2;  // 操作类型文本
+        /// <summary>
+        /// 操作类型下拉框
+        /// </summary>
+        private System.Windows.Forms.ComboBox comboBox2;   // 操作类型下拉框
+        /// <summary>
+        /// 退出登录按钮
+        /// </summary>
+        private System.Windows.Forms.Button button2;  // 退出登录按钮
+        /// <summary>
+        /// 查询历史按钮
+        /// </summary>
+        private System.Windows.Forms.Button button3;   // 查询历史按钮
     }
 }
