@@ -11,7 +11,7 @@ namespace Project
         public string User_Name;
         public string User_password;
         private bool User_type; //0 user 1 admins
-        private int User_number; //数据库查询标号
+        private int User_number; //数据库查询标号 
 
         public User_Information(string name, string password, bool type = false)
         {
@@ -30,6 +30,16 @@ namespace Project
         public bool Get_Type()
         {
             return this.User_type;
+        }
+        
+
+        public void Set_Number(int num)
+        {
+            this.User_number = num;
+        }
+        public int Get_Number()
+        {
+            return this.User_number;
         }
     }
 }
