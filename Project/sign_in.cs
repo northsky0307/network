@@ -30,6 +30,8 @@ namespace Project
         {
             string name = "test1";
             string pass = "123456";
+            string name2 = "admin1";
+            string pass2 = "654321";
             if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim()) //用户名密码验证
             {
                 //界面替换
