@@ -35,13 +35,17 @@ namespace Project
             string name2 = "admin1";
             string pass2 = "654321";
             if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim()) //用户名密码验证*/
-                if (name == "1" && pass == "1") //用户名密码验证
+            if (name == "1" && pass == "1") //用户名密码验证
             {
                 //界面替换
                 user_query form = new user_query();
                 form.Show();                
                 this.Hide();
                 //Application.Run(form);
+            }
+            if(name != "1")
+            {
+                label6.Show();
             }
         }
 
@@ -61,6 +65,11 @@ namespace Project
         }
 
         private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }
