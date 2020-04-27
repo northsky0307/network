@@ -9,7 +9,7 @@ namespace Project
 {
     class User_datebase //使用者信息数据库
     {
-        private ArrayList User_Information_Index = new ArrayList(); //新建vector
+        private ArrayList User_Information_Index = new ArrayList(10); //新建vector
         private Dictionary<string, int> User_Number_Dictionary = new Dictionary<string, int>(); // name对应的num
         private int Database_Size = 0;
         /// <summary>
@@ -44,7 +44,10 @@ namespace Project
                 //(User_Information)User_Information_Index[num];
                 now_user.Set_Number(Database_Size);
                 int num = Database_Size;
-                User_Information_Index[num] = now_user;
+                System.Console.WriteLine(num);
+                User_Information_Index.Add(now_user);
+                //User_Information_Index[num] = now_user;
+                User_Number_Dictionary[name] = num;
                 Database_Size++; ///后移一位
             }
             System.Console.WriteLine(Database_Size);
@@ -55,6 +58,8 @@ namespace Project
         /// </summary>
         public string Query_User_Information(string name) ///正常返回密码， 异常返回-1
         {
+            System.Console.WriteLine("@" + name + "@");
+            System.Console.WriteLine(User_Number_Dictionary.ContainsKey(name));
             if (User_Number_Dictionary.ContainsKey(name))
             {
                 User_Information now_user = (User_Information)User_Information_Index[User_Number_Dictionary[name]];
