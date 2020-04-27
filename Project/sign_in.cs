@@ -42,7 +42,7 @@ namespace Project
             if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim()) //用户名密码验证*/
             ///数据库登陆
 
-            User_Information user = new User_Information("1", "1");
+            //User_Information user = new User_Information("1", "1");
             //User_datebase user_Datebase = new User_datebase();
             //user_Datebase.Add_User_Information();
 

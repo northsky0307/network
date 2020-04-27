@@ -63,6 +63,11 @@ namespace Project
             else
                 return "-1";
         }
-        /// 删除用户
+        
+
+        public void Init()
+        {
+            Add_User_Information("1", "1");
+        }
     }
 }

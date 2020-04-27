@@ -4,7 +4,6 @@ using System.Drawing;
 
 namespace Project
 {
-    
     class HelloWord
     {
         
