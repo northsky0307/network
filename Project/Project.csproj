@@ -40,6 +40,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="error_password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="error_password.Designer.cs">
+      <DependentUpon>error_password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="error_no_exist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="error_no_exist.Designer.cs">
+      <DependentUpon>error_no_exist.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_datebase.cs" />
     <Compile Include="User_Information.cs" />
     <Compile Include="CodeFile1.cs" />
@@ -78,6 +90,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="error_no_exist.resx">
+      <DependentUpon>error_no_exist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="error_password.resx">
+      <DependentUpon>error_password.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="user_history.resx">
       <DependentUpon>user_history.cs</DependentUpon>
     </EmbeddedResource>

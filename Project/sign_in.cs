@@ -51,6 +51,9 @@ namespace Project
             if (current_password == "-1")
             {
                 //用户不存在
+                error_no_exist form = new error_no_exist();
+                form.Show();
+                //this.Dispose();
             }
             else
             {
@@ -59,13 +62,16 @@ namespace Project
                     //界面替换
                     user_query form = new user_query();
                     form.Show();
-                    this.Hide();
+                    this.Dispose();
                     //this.Dispose();
                     //Application.Run(form);
                 }
                 else
                 {
                     //密码错误
+                    error_password form = new error_password();
+                    form.Show();
+                    //this.Dispose();
                 }
             }
             //if (name == user.User_Name && pass == user.User_password) //用户名密码验证
@@ -109,6 +115,11 @@ namespace Project
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

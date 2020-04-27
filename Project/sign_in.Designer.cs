@@ -88,6 +88,7 @@
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(129, 21);
             this.textBox2.TabIndex = 4;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button1
             // 
@@ -102,6 +103,7 @@
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button2.Location = new System.Drawing.Point(312, 383);
             this.button2.Name = "button2";
@@ -141,7 +143,7 @@
             this.label5.Size = new System.Drawing.Size(0, 12);
             this.label5.TabIndex = 9;
             // 
-            // sign_in
+            // Sign_in
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -158,7 +160,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "sign_in";
+            this.Name = "Sign_in";
             this.Text = "登录";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
