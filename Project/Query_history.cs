@@ -23,7 +23,38 @@ namespace Project
             this.query_type = qt;
             this.return_type = rt;
             this.is_hang = ih;
+        }
 
+        public string Get_Name()
+        {
+            return this.name;
+        }
+
+
+        public string Get_resource_name()
+        {
+            return this.resource_name;
+        }
+
+        public DateTime Get_time()
+        {
+            return this.time;
+        }
+
+        public int Get_query_type()
+        {
+            return this.query_type;
+        }
+
+        public int Get_return_type()
+        {
+            return this.return_type;
+        }
+
+        public int Get_is_hang()
+        {
+            return this.is_hang;
         }
     }
+
 }
