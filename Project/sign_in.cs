@@ -71,6 +71,9 @@ namespace Project
                     if(user_num == 1)
                     {
                         //admin
+                        admin_func_choose form = new admin_func_choose();
+                        form.Show();
+                        this.Hide();
                         System.Console.WriteLine("admin");
                     }
 

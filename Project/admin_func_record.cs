@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class rules_admin : Form
+    public partial class admin_func_record : Form
     {
-        public rules_admin()
+        public admin_func_record()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            admin_func_choose form = new admin_func_choose();
+            form.Show();
+            this.Hide();
         }
     }
 }

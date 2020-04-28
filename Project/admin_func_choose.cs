@@ -16,5 +16,19 @@ namespace Project
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Sign_in form = new Sign_in();
+            form.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            admin_func_record form = new admin_func_record();
+            form.Show();
+            this.Hide();
+        }
     }
 }

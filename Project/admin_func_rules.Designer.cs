@@ -1,6 +1,6 @@
 ﻿namespace Project
 {
-    partial class rules_admin
+    partial class admin_func_rules
     {
         /// <summary>
         /// Required designer variable.
