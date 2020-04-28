@@ -10,24 +10,24 @@ namespace Project
     {
         public string User_Name;
         public string User_password;
-        private bool User_type; //0 user 1 admins
+        private int User_type; //0 user 1 admins
         private int User_number; //数据库查询标号 
 
-        public User_Information(string name, string password, bool type = false)
+        public User_Information(string name, string password, int type = 0)
         {
             this.User_Name = name;
             this.User_password = password;
-            if (type == false)
+            if (type == 0)
             {
-                this.User_type = false;
+                this.User_type = 0;
             }
             else
             {
-                this.User_type = true;
+                this.User_type = 1;
             }
         }
 
-        public bool Get_Type()
+        public int Get_Type()
         {
             return this.User_type;
         }

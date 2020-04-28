@@ -39,7 +39,9 @@ namespace Project
             string pass = textBox2.Text.Trim();
 
             //User_Information user = new User_Information("1", "1");
-            string current_password = user_Datebase.Query_User_Information(name);///正常返回密码， 异常返回-1
+            //string current_password = user_Datebase.Query_User_Information(name);///正常返回密码， 异常返回-1
+            string current_password = user_Datebase.Query_User_password(name);///正常返回密码， 异常返回-1
+            int user_num = user_Datebase.Query_User_type(name);
             //user_Datebase.Add_User_Information();
             System.Console.WriteLine("current_password" + current_password);
             if (current_password == "-1")
@@ -52,11 +54,26 @@ namespace Project
             {
                 if (pass == current_password)
                 {
-                    //界面替换
+                    /*
+                     * //界面替换
                     user_query form = new user_query();
                     //Application.Run(form);
                     form.Show();
                     this.Hide();
+                    */
+                    if(user_num == 0) // 用户
+                    {
+                        //界面替换
+                        user_query form = new user_query();
+                        form.Show();
+                        this.Hide();
+                    }
+                    if(user_num == 1)
+                    {
+                        //admin
+                        System.Console.WriteLine("admin");
+                    }
+
                 }
                 else
                 {

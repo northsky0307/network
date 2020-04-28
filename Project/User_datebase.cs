@@ -19,7 +19,7 @@ namespace Project
         /// <param name="password"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public int Add_User_Information(string name, string password, bool type = false) //1 已经存在 0 成功 -1异常（user和admin冲突） -2 用户名为空
+        public int Add_User_Information(string name, string password, int type = 0) //1 已经存在 0 成功 -1异常（user和admin冲突） -2 用户名为空
         {
             if(name == "")
             {
@@ -56,7 +56,8 @@ namespace Project
         /// <summary>
         /// 查询用户密码
         /// </summary>
-        public string Query_User_Information(string name) ///正常返回密码， 异常返回-1
+        //public string Query_User_Information(string name) ///正常返回密码， 异常返回-1
+        public string Query_User_password(string name) ///正常返回密码， 异常返回-1
         {
             System.Console.WriteLine("@" + name + "@");
             System.Console.WriteLine(User_Number_Dictionary.ContainsKey(name));
@@ -68,11 +69,23 @@ namespace Project
             else
                 return "-1";
         }
-        
 
+        public int Query_User_type(string name) ///正常返回密码， 异常返回-1
+        {
+            System.Console.WriteLine("@" + name + "@");
+            System.Console.WriteLine(User_Number_Dictionary.ContainsKey(name));
+            if (User_Number_Dictionary.ContainsKey(name))
+            {
+                User_Information now_user = (User_Information)User_Information_Index[User_Number_Dictionary[name]];
+                return now_user.Get_Type();
+            }
+            else
+                return -1;
+        }
         public void Init()
         {
             Add_User_Information("1", "1");
+            Add_User_Information("ad", "ad", 1);
         }
     }
 }
