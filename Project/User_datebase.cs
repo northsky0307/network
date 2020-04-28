@@ -9,7 +9,8 @@ namespace Project
 {
     class User_datebase //使用者信息数据库
     {
-        private ArrayList User_Information_Index = new ArrayList(10); //新建vector
+        //private ArrayList User_Information_Index = new ArrayList(10); //新建vector
+        private ArrayList User_Information_Index = new ArrayList(); //新建vector
         private Dictionary<string, int> User_Number_Dictionary = new Dictionary<string, int>(); // name对应的num
         private int Database_Size = 0;
         /// <summary>
