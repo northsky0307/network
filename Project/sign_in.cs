@@ -37,12 +37,6 @@ namespace Project
         {
             string name = textBox1.Text.Trim();
             string pass = textBox2.Text.Trim();
-            /*string name = "test1";
-            string pass = "123456";
-            string name2 = "admin1";
-            string pass2 = "654321";
-            if (name == textBox1.Text.Trim() && pass == textBox2.Text.Trim()) //用户名密码验证*/
-            ///数据库登陆
 
             //User_Information user = new User_Information("1", "1");
             string current_password = user_Datebase.Query_User_Information(name);///正常返回密码， 异常返回-1
@@ -53,7 +47,6 @@ namespace Project
                 //用户不存在
                 error_no_exist form = new error_no_exist();
                 form.Show();
-                //this.Dispose();
             }
             else
             {
@@ -61,32 +54,17 @@ namespace Project
                 {
                     //界面替换
                     user_query form = new user_query();
-                    form.Show();
-                    this.Dispose();
-                    //this.Dispose();
                     //Application.Run(form);
+                    form.Show();
+                    this.Hide();
                 }
                 else
                 {
                     //密码错误
                     error_password form = new error_password();
                     form.Show();
-                    //this.Dispose();
                 }
             }
-            //if (name == user.User_Name && pass == user.User_password) //用户名密码验证
-            /*
-            if(pass == current_password)
-            {
-                //界面替换
-                user_query form = new user_query();
-                form.Show();
-                this.Hide();
-                System.Console.WriteLine("user's type = " + user.Get_Type());
-                //this.Dispose();
-                //Application.Run(form);
-            }
-            */
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -101,7 +79,7 @@ namespace Project
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label5.Text = comboBox1.SelectedItem.ToString();
+            
         }
 
         private void Form2_Load(object sender, EventArgs e)

@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class error_no_exist : Form
+    public partial class admin_func_choose : Form
     {
-        public error_no_exist()
+        public admin_func_choose()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
     }
 }

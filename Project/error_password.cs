@@ -19,8 +19,6 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Sign_in form = new Sign_in();
-            //form.Show();
             this.Dispose();
         }
     }
