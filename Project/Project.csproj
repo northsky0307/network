@@ -40,6 +40,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Query_history_database.cs" />
+    <Compile Include="Query_history.cs" />
     <Compile Include="error_password.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,7 +75,7 @@
     <Compile Include="user_history.Designer.cs">
       <DependentUpon>user_history.cs</DependentUpon>
     </Compile>
-    <Compile Include="main.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="user_query.cs">
       <SubType>Form</SubType>
     </Compile>
