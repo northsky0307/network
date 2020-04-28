@@ -42,6 +42,12 @@
   <ItemGroup>
     <Compile Include="Query_history_database.cs" />
     <Compile Include="Query_history.cs" />
+    <Compile Include="admin_func_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_func_record.Designer.cs">
+      <DependentUpon>admin_func_record.cs</DependentUpon>
+    </Compile>
     <Compile Include="error_password.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,11 +66,11 @@
     <Compile Include="admin_func_choose.Designer.cs">
       <DependentUpon>admin_func_choose.cs</DependentUpon>
     </Compile>
-    <Compile Include="rules_admin.cs">
+    <Compile Include="admin_func_rules.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rules_admin.Designer.cs">
-      <DependentUpon>rules_admin.cs</DependentUpon>
+    <Compile Include="admin_func_rules.Designer.cs">
+      <DependentUpon>admin_func_rules.cs</DependentUpon>
     </Compile>
     <Compile Include="User_datebase.cs" />
     <Compile Include="User_Information.cs" />
@@ -75,7 +81,7 @@
     <Compile Include="user_history.Designer.cs">
       <DependentUpon>user_history.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs" />
+    <Compile Include="main.cs" />
     <Compile Include="user_query.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,14 +113,17 @@
     <EmbeddedResource Include="admin_func_choose.resx">
       <DependentUpon>admin_func_choose.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="admin_func_record.resx">
+      <DependentUpon>admin_func_record.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="error_no_exist.resx">
       <DependentUpon>error_no_exist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="error_password.resx">
       <DependentUpon>error_password.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rules_admin.resx">
-      <DependentUpon>rules_admin.cs</DependentUpon>
+    <EmbeddedResource Include="admin_func_rules.resx">
+      <DependentUpon>admin_func_rules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_history.resx">
       <DependentUpon>user_history.cs</DependentUpon>
