@@ -26,7 +26,6 @@ namespace Project
         {
 
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             //界面替换  点击查询历史按钮 进入历史界面
@@ -34,7 +33,12 @@ namespace Project
             form.Show();
             this.Dispose();
         }
-
+            //关闭子窗口，同时结束父窗口
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            Application.Exit(e);
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             //界面替换 点击退出登录按钮  回到登陆界面
