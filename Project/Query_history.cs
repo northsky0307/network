@@ -11,11 +11,11 @@ namespace Project
         private string name; //用户名
         private string resource_name; //资源名称
         private DateTime time; //访问时间
-        private int query_type; //访问类型
+        private string query_type; //访问类型
         private int return_type; //访问结果
         private int is_hang; //是否挂起 0 否
 
-        public Query_history(string n, string r, int qt, int rt, int ih) //构造函数
+        public Query_history(string n, string r, string qt, int rt, int ih) //构造函数
         {
             time = System.DateTime.Now;
             this.name = n;
@@ -41,7 +41,7 @@ namespace Project
             return this.time;
         }
 
-        public int Get_query_type()
+        public string Get_query_type()
         {
             return this.query_type;
         }

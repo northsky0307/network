@@ -11,7 +11,7 @@ namespace Project
     {
         private ArrayList query_history_index = new ArrayList();
 
-        public void Add_query_history(string n, string r, int qt, int rt, int ih) //添加
+        public void Add_query_history(string n, string r, string qt, int rt, int ih) //添加
         {
             Query_history now_query = new Query_history(n, r, qt, rt, ih);
             query_history_index.Add(now_query);

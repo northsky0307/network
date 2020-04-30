@@ -14,6 +14,15 @@ namespace Project
     {
         void MethodToImplement();
     }
+   
+    /*public class UserName
+    {
+        public User_Name username = new User_Name();
+    }
+    public class User_Name
+    {
+        public string username;
+    }*/
     public partial class Sign_in : Form //,IMyForm
     {
         private User_datebase user_Datebase = new User_datebase();
@@ -89,7 +98,7 @@ namespace Project
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
