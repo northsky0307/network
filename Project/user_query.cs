@@ -42,15 +42,25 @@ namespace Project
         private void button2_Click(object sender, EventArgs e)
         {
             //界面替换 点击退出登录按钮  回到登陆界面
-            Sign_in sign_In = new Sign_in();
-            sign_In.Show();
+            Sign_in form = new Sign_in();
+            form.Show();
             this.Dispose();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string user_name = Sign_in.name;
-            System.Console.WriteLine("right" + user_name);
+            string username = "ad";
+          Query_history  search    = new   Query_history(username, resource, worktype,1,0);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            resource = comboBox1.Text;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            worktype = comboBox2.Text;
         }
     }
 }

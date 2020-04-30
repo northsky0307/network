@@ -143,6 +143,7 @@
         }
 
         #endregion
+        
         /// <summary>
         /// 用户名
         /// </summary>
