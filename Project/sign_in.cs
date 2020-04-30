@@ -14,9 +14,11 @@ namespace Project
     {
         void MethodToImplement();
     }
-    public partial class Sign_in : Form //,IMyForm
+
+    public partial class Sign_in : Form//,IMyForm
     {
         private User_datebase user_Datebase = new User_datebase();
+        public static string name;
         public Sign_in()
         {
             user_Datebase.Init();
@@ -35,7 +37,9 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = textBox1.Text.Trim();
+            //string name = textBox1.Text.Trim();
+            name = textBox1.Text.Trim();
+            System.Console.WriteLine("inter " + name);
             string pass = textBox2.Text.Trim();
 
             //User_Information user = new User_Information("1", "1");
@@ -61,14 +65,14 @@ namespace Project
                     form.Show();
                     this.Hide();
                     */
-                    if(user_num == 0) // 用户
+                    if (user_num == 0) // 用户
                     {
                         //界面替换
                         user_query form = new user_query();
                         form.Show();
                         this.Hide();
                     }
-                    if(user_num == 1)
+                    if (user_num == 1)
                     {
                         //admin
                         admin_func_choose form = new admin_func_choose();
@@ -99,7 +103,7 @@ namespace Project
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
