@@ -29,5 +29,15 @@ namespace Project
             form.Show();
             this.Dispose();
         }
+        //关闭子窗口，同时结束父窗口
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            Application.Exit(e);
+        }
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -34,21 +34,25 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(689, 12);
+            this.button1.Location = new System.Drawing.Point(919, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 32);
+            this.button1.Size = new System.Drawing.Size(132, 40);
             this.button1.TabIndex = 0;
             this.button1.Text = "返回";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // rules_admin
+            // admin_func_rules
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 562);
             this.Controls.Add(this.button1);
-            this.Name = "rules_admin";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "admin_func_rules";
             this.Text = "规则管理";
+            this.Load += new System.EventHandler(this.admin_func_rules_Load);
             this.ResumeLayout(false);
 
         }

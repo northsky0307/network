@@ -21,5 +21,15 @@ namespace Project
         {
             this.Dispose();
         }
+
+        private void error_password_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void error_password_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

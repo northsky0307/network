@@ -26,5 +26,10 @@ namespace Project
         {
             this.Dispose();
         }
+
+        private void error_no_exist_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

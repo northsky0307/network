@@ -23,5 +23,16 @@ namespace Project
             form.Show();
             this.Hide();
         }
+
+        private void admin_func_record_Load(object sender, EventArgs e)
+        {
+
+        }
+        //关闭子窗口，同时结束父窗口
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            Application.Exit(e);
+        }
     }
 }
