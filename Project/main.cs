@@ -4,7 +4,6 @@ using System.Drawing;
 
 namespace Project
 {
-
     class HelloWord
     {
 
@@ -12,8 +11,9 @@ namespace Project
         {
             //Form1 用户窗口1  Form2  登陆界面
             //窗口2的引用
-            Sign_in form1 = new Sign_in();
-            Application.Run(form1);
+
+            Sign_in sign_In = new Sign_in();
+            Application.Run(sign_In);
 
         }
     }
