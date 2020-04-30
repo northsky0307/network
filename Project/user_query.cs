@@ -49,7 +49,18 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string username = "ad";
+          Query_history  search    = new   Query_history(username, resource, worktype,1,0);
+        }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            resource = comboBox1.Text;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            worktype = comboBox2.Text;
         }
     }
 }
