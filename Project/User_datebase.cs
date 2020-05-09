@@ -45,13 +45,13 @@ namespace Project
                 //(User_Information)User_Information_Index[num];
                 now_user.Set_Number(Database_Size);
                 int num = Database_Size;
-                System.Console.WriteLine(num);
+                //System.Console.WriteLine(num);
                 User_Information_Index.Add(now_user);
                 //User_Information_Index[num] = now_user;
                 User_Number_Dictionary[name] = num;
                 Database_Size++; ///后移一位
             }
-            System.Console.WriteLine(Database_Size);
+            System.Console.WriteLine("now user size : " + Database_Size);
             return 0;
         }
         /// <summary>
@@ -60,8 +60,9 @@ namespace Project
         //public string Query_User_Information(string name) ///正常返回密码， 异常返回-1
         public string Query_User_password(string name) ///正常返回密码， 异常返回-1
         {
-            System.Console.WriteLine("@" + name + "@");
-            System.Console.WriteLine(User_Number_Dictionary.ContainsKey(name));
+            //System.Console.WriteLine("@" + name + "@");
+            System.Console.WriteLine("query name : " + name);
+            //System.Console.WriteLine(User_Number_Dictionary.ContainsKey(name));
             if (User_Number_Dictionary.ContainsKey(name))
             {
                 User_Information now_user = (User_Information)User_Information_Index[User_Number_Dictionary[name]];
@@ -73,8 +74,9 @@ namespace Project
 
         public int Query_User_type(string name) ///正常返回密码， 异常返回-1
         {
-            System.Console.WriteLine("@" + name + "@");
-            System.Console.WriteLine(User_Number_Dictionary.ContainsKey(name));
+            //System.Console.WriteLine("@" + name + "@");
+            System.Console.WriteLine("query name : " + name);
+            //System.Console.WriteLine(User_Number_Dictionary.ContainsKey(name));
             if (User_Number_Dictionary.ContainsKey(name))
             {
                 User_Information now_user = (User_Information)User_Information_Index[User_Number_Dictionary[name]];
