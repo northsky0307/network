@@ -7,8 +7,9 @@ using System.Collections;
 
 namespace Project
 {
-    class Rule_database
+    public static class Static
     {
-        private ArrayList rule_index = new ArrayList();
+        public static string name;
+        public static ArrayList rule_index = new ArrayList();
     }
 }
