@@ -14,16 +14,19 @@ namespace Project
             //窗口2的引用
             IOStream my_iostream = new IOStream(); //csv 读写
             my_iostream.Get_rule(); //读取规则
+            my_iostream.Get_query(); // 读取访问记录
             /*
-                FileStream fs = new FileStream(strpath, System.IO.FileMode.Create, System.IO.FileAccess.Write);
-
-                StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8);
-                sw.WriteLine("ADS,asd");
-                sw.Close();
-*/
+            //程序结束调用这两行
+            IOStream my_iostream = new IOStream(); //csv 读写
+            my_iostream.write();    
+            */
+            /*
+             //添加一条访问记录
+            Query_history_database query_History_Database = new Query_history_database();
+            query_History_Database.Add_query_history("abc", "def", "hij", 23, 54);
+            */
             Sign_in sign_In = new Sign_in();
             Application.Run(sign_In);
-
 
 
         }

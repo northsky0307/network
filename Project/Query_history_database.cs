@@ -9,20 +9,20 @@ namespace Project
 {
     class Query_history_database
     {
-        private ArrayList query_history_index = new ArrayList();
+        //private ArrayList query_history_index = new ArrayList();
 
         public void Add_query_history(string n, string r, string qt, int rt, int ih) //添加
         {
             Query_history now_query = new Query_history(n, r, qt, rt, ih);
-            query_history_index.Add(now_query);
+            Static.query_history_index.Add(now_query);
         }
         public ArrayList return_query_history(string name) //获得用户的访问根据名称
         {
             ArrayList temp = new ArrayList();
-            for(int i = 0; i < query_history_index.Count; i ++)
+            for(int i = 0; i < Static.query_history_index.Count; i ++)
             {
-                Query_history temp_query = (Query_history)query_history_index[i];
-                if(temp_query.Get_Name() == name)
+                Query_history temp_query = (Query_history)Static.query_history_index[i];
+                if(temp_query.name == name)
                 {
                     temp.Add(temp_query);
                 }
