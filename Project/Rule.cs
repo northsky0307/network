@@ -18,13 +18,5 @@ namespace Project
             this.resource_name = rn;
             this.query_type = q;
         }
-        /*
-        public Rule read()
-        {
-            Rule rule;
-            rule = this;
-            return rule;
-        }
-        */
     }
 }
