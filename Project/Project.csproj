@@ -40,7 +40,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Rule_database.cs" />
+    <Compile Include="IOStream.cs" />
     <Compile Include="Rule.cs" />
     <Compile Include="Query_history_database.cs" />
     <Compile Include="Query_history.cs" />
@@ -74,6 +74,7 @@
     <Compile Include="admin_func_rules.Designer.cs">
       <DependentUpon>admin_func_rules.cs</DependentUpon>
     </Compile>
+    <Compile Include="Static.cs" />
     <Compile Include="User_datebase.cs" />
     <Compile Include="User_Information.cs" />
     <Compile Include="user_history.cs">

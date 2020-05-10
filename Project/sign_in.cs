@@ -18,7 +18,7 @@ namespace Project
     public partial class Sign_in : Form//,IMyForm
     {
         private User_datebase user_Datebase = new User_datebase();
-        public static string name;
+        //public static string name;
         public Sign_in()
         {
             user_Datebase.Init();
@@ -38,16 +38,16 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             //string name = textBox1.Text.Trim();
-            name = textBox1.Text.Trim();
-            System.Console.WriteLine("inter " + name);
+            Static.name = textBox1.Text.Trim();
+            System.Console.WriteLine("user name : " + Static.name);
             string pass = textBox2.Text.Trim();
 
             //User_Information user = new User_Information("1", "1");
             //string current_password = user_Datebase.Query_User_Information(name);///正常返回密码， 异常返回-1
-            string current_password = user_Datebase.Query_User_password(name);///正常返回密码， 异常返回-1
-            int user_num = user_Datebase.Query_User_type(name);
+            string current_password = user_Datebase.Query_User_password(Static.name);///正常返回密码， 异常返回-1
+            int user_num = user_Datebase.Query_User_type(Static.name);
             //user_Datebase.Add_User_Information();
-            System.Console.WriteLine("current_password" + current_password);
+            System.Console.WriteLine("current_password : " + current_password);
             if (current_password == "-1")
             {
                 //用户不存在
@@ -71,6 +71,8 @@ namespace Project
                         user_query form = new user_query();
                         form.Show();
                         this.Hide();
+
+                        System.Console.WriteLine("type : user");
                     }
                     if (user_num == 1)
                     {
@@ -78,7 +80,7 @@ namespace Project
                         admin_func_choose form = new admin_func_choose();
                         form.Show();
                         this.Hide();
-                        System.Console.WriteLine("admin");
+                        System.Console.WriteLine("type : admin");
                     }
 
                 }
