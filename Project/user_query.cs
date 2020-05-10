@@ -50,6 +50,9 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             string user_name = Static.name;
+            user_do_search user_Do_Search = new user_do_search();
+            user_Do_Search.Show();
+            this.Dispose();
             //System.Console.WriteLine("right" + user_name);
             //Query_history  search    = new   Query_history(user_name, resource, worktype,1,0);
         }
