@@ -50,8 +50,8 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             string user_name = Static.name;
-            System.Console.WriteLine("right" + user_name);
-            Query_history  search    = new   Query_history(user_name, resource, worktype,1,0);
+            //System.Console.WriteLine("right" + user_name);
+            //Query_history  search    = new   Query_history(user_name, resource, worktype,1,0);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
