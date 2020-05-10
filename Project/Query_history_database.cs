@@ -34,6 +34,8 @@ namespace Project
             now_query.ADD(ACTION, TARGET_NAME, PERSON_BUSINESS_TITLE, PERSON_BUSINESS_TITLE_DETAIL, PERSON_COMPANY, PERSON_DEPTNAME, PERSON_JOB_CODE, PERSON_JOB_FAMILY,
                               PERSON_LOCATION, PERSON_MGR_ID, PERSON_ROLLUP_1, PERSON_ROLLUP_2, PERSON_ROLLUP_3);
             Static.query_history_index.Add(now_query);
+            IOStream myst = new IOStream();
+            myst.write_query(now_query);
         }
         public ArrayList return_query_history(string name) //获得用户的访问根据名称 重新写吧
         {

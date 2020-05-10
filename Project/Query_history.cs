@@ -8,7 +8,6 @@ namespace Project
 {
     class Query_history
     {
-
         public string ACTION;
         public int TARGET_NAME;
         public int PERSON_BUSINESS_TITLE;
