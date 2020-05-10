@@ -12,7 +12,7 @@ namespace Project
         /// <summary>
         /// 读取规则
         /// </summary>
-        public void Get_rule() 
+        public void Get_rule()
         {
             string filepath = "..\\..\\rule.csv";
             StreamReader mysr = new StreamReader(filepath, System.Text.Encoding.Default);
@@ -66,26 +66,53 @@ namespace Project
             Query_history query_History = new Query_history();
             string[] now_string; //每一列
 
-            string name; //用户名
-            string resource_name; //资源名称
-            DateTime time; //访问时间
-            string query_type; //访问类型
-            int return_type; //访问结果
-            int is_hang; //是否挂起 0 否
+            string ACTION;
+            int TARGET_NAME;
+            int PERSON_BUSINESS_TITLE;
+            int PERSON_BUSINESS_TITLE_DETAIL;
+            int PERSON_COMPANY;
+            int PERSON_DEPTNAME;
+            int PERSON_JOB_CODE;
+            int PERSON_JOB_FAMILY;
+            int PERSON_LOCATION;
+            int PERSON_MGR_ID;
+            int PERSON_ROLLUP_1;
+            int PERSON_ROLLUP_2;
+            int PERSON_ROLLUP_3;
+            DateTime REQUEST_DATE;
+
+
             while ((str = mysr.ReadLine()) != null)
             {
                 System.Console.WriteLine(str);
                 now_string = str.Split(',');
-                
-                name = now_string[0];
+                /*
+                name = 
                 resource_name = now_string[1];
                 query_type = now_string[2];
                 return_type = Convert.ToInt32(now_string[3]);
                 is_hang = Convert.ToInt32(now_string[4]);
                 time = Convert.ToDateTime(now_string[5]);
-                query_History.ADD(name, resource_name, query_type, return_type , is_hang, time);
+                */
+                 ACTION = now_string[0];
+                 TARGET_NAME =Convert.ToInt32(now_string[1]);
+                 PERSON_BUSINESS_TITLE = Convert.ToInt32(now_string[2]);
+                 PERSON_BUSINESS_TITLE_DETAIL = Convert.ToInt32(now_string[3]);
+                 PERSON_COMPANY = Convert.ToInt32(now_string[4]);
+                 PERSON_DEPTNAME = Convert.ToInt32(now_string[5]);
+                 PERSON_JOB_CODE = Convert.ToInt32(now_string[6]);
+                 PERSON_JOB_FAMILY = Convert.ToInt32(now_string[7]);
+                 PERSON_LOCATION = Convert.ToInt32(now_string[8]);
+                 PERSON_MGR_ID = Convert.ToInt32(now_string[9]);
+                 PERSON_ROLLUP_1 = Convert.ToInt32(now_string[10]);
+                 PERSON_ROLLUP_2 = Convert.ToInt32(now_string[11]);
+                 PERSON_ROLLUP_3 = Convert.ToInt32(now_string[12]);
+                 REQUEST_DATE = Convert.ToDateTime(now_string[13]);
+
+                query_History = new Query_history(ACTION, TARGET_NAME, PERSON_BUSINESS_TITLE, PERSON_BUSINESS_TITLE_DETAIL, PERSON_COMPANY, PERSON_DEPTNAME, PERSON_JOB_CODE, PERSON_JOB_FAMILY,
+                              PERSON_LOCATION, PERSON_MGR_ID, PERSON_ROLLUP_1, PERSON_ROLLUP_2, PERSON_ROLLUP_3, REQUEST_DATE);
                 Static.rule_index.Add(query_History);//写入ArrayList
-                
+
             }
             mysr.Close();
         }
@@ -102,8 +129,26 @@ namespace Project
             for (int i = 0; i < Static.query_history_index.Count; i++)
             {
                 query_History = (Query_history)Static.query_history_index[i];
+                /*
                 sw.Write(query_History.name + "," + query_History.resource_name + "," + query_History.query_type.ToString() + ",");
                 sw.WriteLine(query_History.return_type.ToString() + "," + query_History.is_hang.ToString() + "," + query_History.time.ToString());
+                */
+
+
+                sw.Write(query_History.ACTION);
+                sw.Write(query_History.TARGET_NAME.ToString() + ",");
+                sw.Write(query_History.PERSON_BUSINESS_TITLE.ToString() + ",");
+                sw.Write(query_History.PERSON_BUSINESS_TITLE_DETAIL.ToString() + ",");
+                sw.Write(query_History.PERSON_COMPANY.ToString() + ",");
+                sw.Write(query_History.PERSON_DEPTNAME.ToString() + ",");
+                sw.Write(query_History.PERSON_JOB_CODE.ToString() + ",");
+                sw.Write(query_History.PERSON_JOB_FAMILY.ToString() + ",");
+                sw.Write(query_History.PERSON_LOCATION.ToString() + ",");
+                sw.Write(query_History.PERSON_MGR_ID.ToString() + ",");
+                sw.Write(query_History.PERSON_ROLLUP_1.ToString() + ",");
+                sw.Write(query_History.PERSON_ROLLUP_2.ToString() + ",");
+                sw.Write(query_History.PERSON_ROLLUP_3.ToString() + ",");
+                sw.WriteLine(query_History.TARGET_NAME.ToString());
             }
             sw.Close();
         }
