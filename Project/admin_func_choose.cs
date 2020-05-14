@@ -41,5 +41,19 @@ namespace Project
             base.OnClosing(e);
             Application.Exit(e);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ad_rules_ch form = new ad_rules_ch();
+            form.Show();
+            this.Dispose();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ad_rules_join form = new ad_rules_join();
+            form.Show();
+            this.Dispose();
+        }
     }
 }

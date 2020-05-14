@@ -45,10 +45,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(400, 82);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(300, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 40);
+            this.label1.Size = new System.Drawing.Size(147, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "查询历史";
             // 
@@ -62,12 +61,12 @@
             "一个月内",
             "三个月内",
             "半年内"});
-            this.comboBox1.Location = new System.Drawing.Point(268, 155);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Location = new System.Drawing.Point(201, 124);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 23);
+            this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.Text = "半年内";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -76,20 +75,18 @@
             "允许",
             "拒绝",
             "待处理"});
-            this.comboBox2.Location = new System.Drawing.Point(588, 155);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Location = new System.Drawing.Point(441, 124);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(160, 23);
+            this.comboBox2.Size = new System.Drawing.Size(121, 20);
             this.comboBox2.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(95, 159);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(71, 127);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 18);
+            this.label6.Size = new System.Drawing.Size(82, 14);
             this.label6.TabIndex = 8;
             this.label6.Text = "条件筛选：";
             // 
@@ -103,12 +100,11 @@
             this.操作类型,
             this.授权结果});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(97, 212);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(73, 170);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 30;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(844, 282);
+            this.dataGridView1.Size = new System.Drawing.Size(633, 226);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -139,10 +135,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(945, 512);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(709, 410);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 35);
+            this.button1.Size = new System.Drawing.Size(79, 28);
             this.button1.TabIndex = 10;
             this.button1.Text = "返回";
             this.button1.UseVisualStyleBackColor = true;
@@ -150,18 +145,18 @@
             // 
             // user_history
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 562);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "user_history";
             this.Text = "查询历史";
+            this.Load += new System.EventHandler(this.user_history_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -40,6 +40,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ad_rules_ch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ad_rules_ch.Designer.cs">
+      <DependentUpon>ad_rules_ch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ad_rules_join.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ad_rules_join.Designer.cs">
+      <DependentUpon>ad_rules_join.cs</DependentUpon>
+    </Compile>
     <Compile Include="IOStream.cs" />
     <Compile Include="Rule.cs" />
     <Compile Include="Query_history_database.cs" />
@@ -123,6 +135,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin_func_record.resx">
       <DependentUpon>admin_func_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ad_rules_ch.resx">
+      <DependentUpon>ad_rules_ch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ad_rules_join.resx">
+      <DependentUpon>ad_rules_join.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="error_no_exist.resx">
       <DependentUpon>error_no_exist.cs</DependentUpon>
