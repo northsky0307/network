@@ -31,7 +31,7 @@ namespace Project
         {
             //Query_history now_query = new Query_history(n, r, qt, rt, ih);
             Query_history now_query = new Query_history();
-            now_query.ADD(ACTION, TARGET_NAME, PERSON_BUSINESS_TITLE, PERSON_BUSINESS_TITLE_DETAIL, PERSON_COMPANY, PERSON_DEPTNAME, PERSON_JOB_CODE, PERSON_JOB_FAMILY,
+            now_query.ADD_new_query_history(ACTION, TARGET_NAME, PERSON_BUSINESS_TITLE, PERSON_BUSINESS_TITLE_DETAIL, PERSON_COMPANY, PERSON_DEPTNAME, PERSON_JOB_CODE, PERSON_JOB_FAMILY,
                               PERSON_LOCATION, PERSON_MGR_ID, PERSON_ROLLUP_1, PERSON_ROLLUP_2, PERSON_ROLLUP_3);
             Static.query_history_index.Add(now_query);
             IOStream myst = new IOStream();

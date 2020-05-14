@@ -86,6 +86,7 @@
     <Compile Include="admin_func_rules.Designer.cs">
       <DependentUpon>admin_func_rules.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rule_operation.cs" />
     <Compile Include="Static.cs" />
     <Compile Include="User_datebase.cs" />
     <Compile Include="user_do_search.cs">

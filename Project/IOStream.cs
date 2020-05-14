@@ -20,20 +20,44 @@ namespace Project
             Rule rule; //插入rule
 
             string[] now_string; //每一列
-            string name; //用户名
-            string resource_name; //资源名称
-            int query_type;//访问类型
+            string ACTION;
+            int TARGET_NAME;
+            int PERSON_BUSINESS_TITLE;
+            int PERSON_BUSINESS_TITLE_DETAIL;
+            int PERSON_COMPANY;
+            int PERSON_DEPTNAME;
+            int PERSON_JOB_CODE;
+            int PERSON_JOB_FAMILY;
+            int PERSON_LOCATION;
+            int PERSON_MGR_ID;
+            int PERSON_ROLLUP_1;
+            int PERSON_ROLLUP_2;
+            int PERSON_ROLLUP_3;
             while ((str = mysr.ReadLine()) != null)
             {
 
                 now_string = str.Split(',');
-                name = now_string[0];
-                resource_name = now_string[1];
-                query_type = Convert.ToInt32(now_string[2]);
+                if (Convert.ToInt32(now_string[0]) == 0)
+                    ACTION = "remove_access";
+                else
+                    ACTION = "add_access";
+                TARGET_NAME = Convert.ToInt32(now_string[1]);
+                PERSON_BUSINESS_TITLE = Convert.ToInt32(now_string[2]);
+                PERSON_BUSINESS_TITLE_DETAIL = Convert.ToInt32(now_string[3]);
+                PERSON_COMPANY = Convert.ToInt32(now_string[4]);
+                PERSON_DEPTNAME = Convert.ToInt32(now_string[5]);
+                PERSON_JOB_CODE = Convert.ToInt32(now_string[6]);
+                PERSON_JOB_FAMILY = Convert.ToInt32(now_string[7]);
+                PERSON_LOCATION = Convert.ToInt32(now_string[8]);
+                PERSON_MGR_ID = Convert.ToInt32(now_string[9]);
+                PERSON_ROLLUP_1 = Convert.ToInt32(now_string[10]);
+                PERSON_ROLLUP_2 = Convert.ToInt32(now_string[11]);
+                PERSON_ROLLUP_3 = Convert.ToInt32(now_string[12]);
 
-                rule = new Rule(name, resource_name, query_type);
+                rule = new Rule(ACTION, TARGET_NAME, PERSON_BUSINESS_TITLE, PERSON_BUSINESS_TITLE_DETAIL, PERSON_COMPANY, PERSON_DEPTNAME, PERSON_JOB_CODE, PERSON_JOB_FAMILY,
+                              PERSON_LOCATION, PERSON_MGR_ID, PERSON_ROLLUP_1, PERSON_ROLLUP_2, PERSON_ROLLUP_3);
+
                 Static.rule_index.Add(rule);//写入ArrayList
-
             }
             mysr.Close();
         }
@@ -47,8 +71,22 @@ namespace Project
             FileStream fs = new FileStream(filepath, FileMode.Append);
             StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
 
-            sw.WriteLine(rule.name + "," + rule.resource_name + "," + rule.query_type.ToString());
-
+            if (rule.ACTION == "remove_access")
+                sw.Write("0" + ",");
+            else
+                sw.Write("1" + ",");
+            sw.Write(rule.TARGET_NAME.ToString() + ",");
+            sw.Write(rule.PERSON_BUSINESS_TITLE.ToString() + ",");
+            sw.Write(rule.PERSON_BUSINESS_TITLE_DETAIL.ToString() + ",");
+            sw.Write(rule.PERSON_COMPANY.ToString() + ",");
+            sw.Write(rule.PERSON_DEPTNAME.ToString() + ",");
+            sw.Write(rule.PERSON_JOB_CODE.ToString() + ",");
+            sw.Write(rule.PERSON_JOB_FAMILY.ToString() + ",");
+            sw.Write(rule.PERSON_LOCATION.ToString() + ",");
+            sw.Write(rule.PERSON_MGR_ID.ToString() + ",");
+            sw.Write(rule.PERSON_ROLLUP_1.ToString() + ",");
+            sw.Write(rule.PERSON_ROLLUP_2.ToString() + ",");
+            sw.Write(rule.PERSON_ROLLUP_3.ToString() + ",");
             sw.Close();
         }
         /// <summary>
@@ -80,7 +118,7 @@ namespace Project
 
             while ((str = mysr.ReadLine()) != null)
             {
-                System.Console.WriteLine(str);
+                //System.Console.WriteLine(str);
                 now_string = str.Split(',');
                 ACTION = now_string[0];
                 TARGET_NAME = Convert.ToInt32(now_string[1]);
