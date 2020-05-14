@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +33,8 @@ namespace Project
             user_history form = new user_history();
             form.Show();
             this.Dispose();
+            
+
         }
             //关闭子窗口，同时结束父窗口
         protected override void OnClosing(CancelEventArgs e)
@@ -53,6 +56,13 @@ namespace Project
             user_do_search user_Do_Search = new user_do_search();
             user_Do_Search.Show();
             this.Dispose();
+
+            //ArrayList test11 = new ArrayList();
+            //Query_history_database test1 = new Query_history_database();
+            //test11 = test1.return_query_history(user_name);
+            Query_history test1 = (Query_history)Static.query_history_index[1];
+            Console.WriteLine(test1.TARGET_NAME) ;
+            
             //System.Console.WriteLine("right" + user_name);
             //Query_history  search    = new   Query_history(user_name, resource, worktype,1,0);
         }
