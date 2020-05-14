@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace Project
 {
-    class Query_history_database
+    class Query_history_operation
     {
         //private ArrayList query_history_index = new ArrayList();
         /// <summary>
@@ -43,7 +43,7 @@ namespace Project
             for(int i = 0; i < Static.query_history_index.Count; i ++)
             {
                 Query_history temp_query = (Query_history)Static.query_history_index[i];
-                //if(temp_query.name == name) 查询条件 这个已经不合适了
+                if(temp_query.TARGET_NAME.ToString() == name) //查询条件 这个已经不合适了
                 {
                     temp.Add(temp_query);
                 }

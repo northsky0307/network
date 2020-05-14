@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Project
 {
@@ -15,10 +16,12 @@ namespace Project
         public user_history()
         {
             InitializeComponent();
-            
-            for (int i = 0; i < Static.query_history_index.Count ; i++ )
+
+            Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+            ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数
+            for (int i = 0; i < query.Count ; i++ )
             {
-                Query_history query_out_his = (Query_history)Static.query_history_index[i];
+                Query_history query_out_his = (Query_history)query[i];
            
                 int index = this.dataGridView1.Rows.Add();
 
@@ -30,7 +33,7 @@ namespace Project
 
                 this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;  //授权结果
             }
-
+            // System.Console.WriteLine(Static.query_history_index.Count);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
