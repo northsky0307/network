@@ -54,7 +54,7 @@
     </Compile>
     <Compile Include="IOStream.cs" />
     <Compile Include="Rule.cs" />
-    <Compile Include="Query_history_database.cs" />
+    <Compile Include="Query_history_operation.cs" />
     <Compile Include="Query_history.cs" />
     <Compile Include="admin_func_record.cs">
       <SubType>Form</SubType>
