@@ -229,7 +229,33 @@ namespace Project
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if ((string)comboBox2.SelectedItem == "允许")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (time_ <= 1.0)
+                    {
 
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;  //授权结果
+
+                    }
+
+                }
+            }
         }
     }
 }
