@@ -28,7 +28,7 @@ namespace test
             Form frm = (Form)sender;
             Graphics g = e.Graphics;
             //g.Clear(Color.Black);
-            g.DrawString("Hello Word", frm.Font, Brushes.White, new Point(20, 20));
+            g.DrawString("Hello Word", frm.Font, Brushes.White, new Point(40, 40));
         }
     }
 }
