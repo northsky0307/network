@@ -28,13 +28,15 @@ namespace Project
 
                 this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
 
-                this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+                this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.PERSON_MGR_ID;   //用户名
 
-                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.TARGET_NAME;   //资源名称
 
-                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;  //授权结果
+                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
 
-                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_MGR_ID;   //用户名
+                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;  //授权结果
+
+                
             }
         }
 

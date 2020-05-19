@@ -53,18 +53,33 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             string user_name = Static.name;
-            user_do_search user_Do_Search = new user_do_search();
-            user_Do_Search.Show();
-            this.Dispose();
 
-            //ArrayList test11 = new ArrayList();
-            //Query_history_database test1 = new Query_history_database();
-            //test11 = test1.return_query_history(user_name);
-            Query_history test1 = (Query_history)Static.query_history_index[1];
-            Console.WriteLine(test1.TARGET_NAME) ;
+            Rule_operation search_rules = new Rule_operation();
+
+            string result = search_rules.Find(/*comboBox1.Text*/1, -1, -1, -1, -1, -1, -1, -1, 41401, -1, 1/*comboBox2.Text*/);
+
+            if(result == "add_access")
+            {
+                user_do_search user_Do_Search = new user_do_search();
+                user_Do_Search.Show();
+                this.Dispose();
+            }
+            else if(result == "remove_access")
+            {
+                user_no_limit error_tip = new user_no_limit();
+                error_tip.Show();
+            }
+            else if(result == "hang")
+            {
+                user_no_rule error_tip = new user_no_rule();
+                error_tip.Show();
+            }
             
-            //System.Console.WriteLine("right" + user_name);
-            //Query_history  search    = new   Query_history(user_name, resource, worktype,1,0);
+
+            
+            
+            
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

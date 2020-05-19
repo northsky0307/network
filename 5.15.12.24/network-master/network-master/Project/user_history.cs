@@ -18,7 +18,7 @@ namespace Project
             InitializeComponent();
 
             Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
-            ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数  9670应为用户名；
+            ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数  9670应为用户名；
             for (int i = 0; i <query.Count ; i++ )
             {
 
@@ -30,9 +30,20 @@ namespace Project
 
                 this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
 
-                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
 
-                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;  //授权结果
+                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
+                
             }
             // System.Console.WriteLine(Static.query_history_index.Count);
         }
@@ -76,7 +87,7 @@ namespace Project
             {
                 this.dataGridView1.Rows.Clear();
                 Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
-                ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
                 for (int i = 0; i < query.Count; i++)
                 {
                     Query_history query_out_his = (Query_history)query[i];
@@ -87,22 +98,35 @@ namespace Project
 
                     this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
 
-                    this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+                    this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
 
                     this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                    this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                    this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                    this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                    this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                    this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                    this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                    this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                    this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                    this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
+                    this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
                 }
             }
             if ((string)comboBox1.SelectedItem == "半年内")
             {
                 this.dataGridView1.Rows.Clear();
                 Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
-                ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
                 for (int i = 0; i < query.Count; i++)
                 {
                     Query_history query_out_his = (Query_history)query[i];
                     TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
                     double time_ = time_dis.TotalDays;
-                    if(time_ <= 180) { 
+                    if(time_ <= 180) {
+
+                        
 
                         int index = this.dataGridView1.Rows.Add();
 
@@ -110,19 +134,71 @@ namespace Project
 
                         this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
 
-                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
 
                         this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
 
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
                     }
 
                 }
             }
+
+            if ((string)comboBox1.SelectedItem == "十二年内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (time_ <= 4380)
+                    {
+
+
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+
+
             if ((string)comboBox1.SelectedItem == "三个月内")
             {
                 this.dataGridView1.Rows.Clear();
                 Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
-                ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
                 for (int i = 0; i < query.Count; i++)
                 {
                     Query_history query_out_his = (Query_history)query[i];
@@ -137,10 +213,20 @@ namespace Project
 
                         this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
 
-                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
 
                         this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
 
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
                     }
 
                 }
@@ -149,7 +235,7 @@ namespace Project
             {
                 this.dataGridView1.Rows.Clear();
                 Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
-                ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
                 for (int i = 0; i < query.Count; i++)
                 {
                     Query_history query_out_his = (Query_history)query[i];
@@ -164,10 +250,20 @@ namespace Project
 
                         this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
 
-                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
 
                         this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
 
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
                     }
 
                 }
@@ -176,7 +272,7 @@ namespace Project
             {
                 this.dataGridView1.Rows.Clear();
                 Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
-                ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
                 for (int i = 0; i < query.Count; i++)
                 {
                     Query_history query_out_his = (Query_history)query[i];
@@ -191,10 +287,20 @@ namespace Project
 
                         this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
 
-                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
 
                         this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
 
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
                     }
 
                 }
@@ -203,7 +309,7 @@ namespace Project
             {
                 this.dataGridView1.Rows.Clear();
                 Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
-                ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
                 for (int i = 0; i < query.Count; i++)
                 {
                     Query_history query_out_his = (Query_history)query[i];
@@ -218,10 +324,20 @@ namespace Project
 
                         this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
 
-                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
 
                         this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
 
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
                     }
 
                 }
@@ -230,17 +346,17 @@ namespace Project
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((string)comboBox2.SelectedItem == "允许")
+            if ((string)comboBox2.SelectedItem == "允许"&&(string)comboBox1.SelectedItem == "十二年内")
             {
                 this.dataGridView1.Rows.Clear();
                 Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
-                ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
                 for (int i = 0; i < query.Count; i++)
                 {
                     Query_history query_out_his = (Query_history)query[i];
                     TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
                     double time_ = time_dis.TotalDays;
-                    if (query_out_his.ACTION == "允许")
+                    if (query_out_his.ACTION == "add_access"&& time_<= 4380)
                     {
 
                         int index = this.dataGridView1.Rows.Add();
@@ -249,25 +365,35 @@ namespace Project
 
                         this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
 
-                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
 
                         this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
 
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
                     }
 
                 }
             }
-            if ((string)comboBox2.SelectedItem == "拒绝")
+            if ((string)comboBox2.SelectedItem == "允许"&&(string)comboBox1.SelectedItem == null)
             {
                 this.dataGridView1.Rows.Clear();
                 Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
-                ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
                 for (int i = 0; i < query.Count; i++)
                 {
                     Query_history query_out_his = (Query_history)query[i];
                     TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
                     double time_ = time_dis.TotalDays;
-                    if (query_out_his.ACTION == "拒绝")
+                    if (query_out_his.ACTION == "add_access")
                     {
 
                         int index = this.dataGridView1.Rows.Add();
@@ -276,25 +402,35 @@ namespace Project
 
                         this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
 
-                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
 
                         this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
 
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
                     }
 
                 }
             }
-            if ((string)comboBox2.SelectedItem == "待处理")
+            if ((string)comboBox2.SelectedItem == "允许" && (string)comboBox1.SelectedItem == "全部")
             {
                 this.dataGridView1.Rows.Clear();
                 Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
-                ArrayList query = query_History_Operation.return_query_history("9670"); // 需要重写的那个查询函数
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
                 for (int i = 0; i < query.Count; i++)
                 {
                     Query_history query_out_his = (Query_history)query[i];
                     TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
                     double time_ = time_dis.TotalDays;
-                    if (query_out_his.ACTION == "待处理")
+                    if (query_out_his.ACTION == "add_access" )
                     {
 
                         int index = this.dataGridView1.Rows.Add();
@@ -303,12 +439,787 @@ namespace Project
 
                         this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
 
-                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;  //操作类型
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
 
                         this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
 
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
                     }
 
+                }
+            }
+
+            if ((string)comboBox2.SelectedItem == "允许" && (string)comboBox1.SelectedItem == "半年内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "add_access" && time_ <= 180.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "允许" && (string)comboBox1.SelectedItem == "三个月内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "add_access" && time_ <= 90.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "允许" && (string)comboBox1.SelectedItem == "一个月内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "add_access" && time_ <= 30.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "允许" && (string)comboBox1.SelectedItem == "一周内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "add_access" && time_ <= 7.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "允许" && (string)comboBox1.SelectedItem == "今天")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "add_access" && time_ <= 1.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "拒绝"&&(string)comboBox1.SelectedItem == null)
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "remove_access")
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "拒绝"&&(string)comboBox1.SelectedItem == "全部")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "remove_access")
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "拒绝" && (string)comboBox1.SelectedItem == "十二年内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "remove_access" && time_ <= 4380)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "拒绝" && (string)comboBox1.SelectedItem == "半年内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "remove_access" && time_ <= 180)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "拒绝" && (string)comboBox1.SelectedItem == "三个月内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "remove_access" && time_ <=90.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "拒绝" && (string)comboBox1.SelectedItem == "一个月内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "remove_access" && time_ <= 30.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "拒绝" && (string)comboBox1.SelectedItem == "一周内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "remove_access" && time_ <= 7.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "拒绝" && (string)comboBox1.SelectedItem == "今天")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (query_out_his.ACTION == "remove_access" && time_ <= 1.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "待处理"&&(string)comboBox1.SelectedItem == null)
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_hang_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+
+                    int index = this.dataGridView1.Rows.Add();
+
+                    this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                    this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                    this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                    this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                    this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                    this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                    this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                    this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                    this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                    this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                    this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                    this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                    this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                    this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                }
+            }
+
+            if ((string)comboBox2.SelectedItem == "待处理" && (string)comboBox1.SelectedItem == "全部")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_hang_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+
+                    int index = this.dataGridView1.Rows.Add();
+
+                    this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                    this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                    this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                    this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                    this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                    this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                    this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                    this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                    this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                    this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                    this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                    this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                    this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                    this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "待处理" && (string)comboBox1.SelectedItem == "十二年内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_hang_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (time_ <= 4380)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "待处理" && (string)comboBox1.SelectedItem == "半年内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_hang_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (time_ <= 180.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "待处理" && (string)comboBox1.SelectedItem == "三个月内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_hang_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (time_ <= 90.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "待处理" && (string)comboBox1.SelectedItem == "一个月内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_hang_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (time_ <= 30.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "待处理" && (string)comboBox1.SelectedItem == "一周内")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_hang_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (time_ <= 7.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
+                }
+            }
+            if ((string)comboBox2.SelectedItem == "待处理" && (string)comboBox1.SelectedItem == "今天")
+            {
+                this.dataGridView1.Rows.Clear();
+                Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
+                ArrayList query = query_History_Operation.return_query_hang_history("41401"); // 需要重写的那个查询函数
+                for (int i = 0; i < query.Count; i++)
+                {
+                    Query_history query_out_his = (Query_history)query[i];
+                    TimeSpan time_dis = DateTime.Now - query_out_his.REQUEST_DATE;
+                    double time_ = time_dis.TotalDays;
+                    if (time_ <= 1.0)
+                    {
+
+                        int index = this.dataGridView1.Rows.Add();
+
+                        this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
+
+                        this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+
+                        this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
+
+                        this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
+
+                        this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                        this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                        this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                        this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                        this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                        this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                        this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                        this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                        this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_MGR_ID;
+                    }
                 }
             }
         }
