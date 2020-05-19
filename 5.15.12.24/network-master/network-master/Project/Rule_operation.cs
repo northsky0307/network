@@ -11,8 +11,8 @@ namespace Project
         /// <summary>
         /// 找到在规则内 返回action 否则返回字符串 hang
         /// </summary>
-        /// <param name="TARGET_NAME"></param>
-        /// <param name="PERSON_BUSINESS_TITLE"></param>
+        /// <param name="TARGET_NAME"></param>    //resource 
+        /// <param name="PERSON_BUSINESS_TITLE"></param>  
         /// <param name="PERSON_BUSINESS_TITLE_DETAIL"></param>
         /// <param name="PERSON_COMPANY"></param>
         /// <param name="PERSON_DEPTNAME"></param>

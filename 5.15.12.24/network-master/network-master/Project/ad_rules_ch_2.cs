@@ -7,19 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
-
 
 namespace Project
 {
-    public partial class ad_rules_ch : Form
+    public partial class ad_rules_ch_2 : Form
     {
-        public ad_rules_ch()
+        public ad_rules_ch_2()
         {
             InitializeComponent();
 
-            
-            for (int i = 0; i < 3000/*Static.rule_index.Count*/; i++)
+            for (int i = 3001; i < 6000/*Static.rule_index.Count*/; i++)
             {
                 Rule query_out_his = (Rule)Static.rule_index[i];
 
@@ -42,10 +39,10 @@ namespace Project
                 this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_JOB_CODE;
                 this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
                 this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
-                
+
 
             }
-            
+
             DataGridViewButtonColumn btnDELETE = new DataGridViewButtonColumn();
             btnDELETE.Name = "btnDELETE";
             btnDELETE.HeaderText = "删除";
@@ -61,7 +58,6 @@ namespace Project
             dataGridView1.Columns.Add(btnMDF);
 
         }
-     
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -69,32 +65,31 @@ namespace Project
             form.Show();
             this.Dispose();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ad_rules_ch_3 form = new ad_rules_ch_3();
+            form.Show();
+            this.Dispose();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ad_rules_ch form = new ad_rules_ch();
+            form.Show();
+            this.Dispose();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btnMDF" && e.RowIndex >= 0)  //单击修改
             {
-                
+
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btnDELETE" && e.RowIndex >= 0)  //单击删除
             {
-                //dataGridView1.Rows[e.RowIndex].
+
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ad_add_rules add_Rules = new ad_add_rules();
-            add_Rules.Show();
-            
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ad_rules_ch_2 form = new ad_rules_ch_2();
-            form.Show();
-            this.Dispose();
-        }
-        
-
     }
 }

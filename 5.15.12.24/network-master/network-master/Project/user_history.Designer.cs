@@ -33,13 +33,23 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.资源名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.操作类型 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.授权结果 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +73,8 @@
             "一个月内",
             "三个月内",
             "半年内",
-            "全部"});
+            "全部",
+            "十二年内"});
             this.comboBox1.Location = new System.Drawing.Point(293, 124);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
@@ -102,7 +113,17 @@
             this.时间,
             this.资源名称,
             this.操作类型,
-            this.授权结果});
+            this.授权结果,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(73, 170);
             this.dataGridView1.Name = "dataGridView1";
@@ -111,30 +132,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(633, 226);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // 时间
-            // 
-            this.时间.HeaderText = "时间";
-            this.时间.Name = "时间";
-            this.时间.Width = 150;
-            // 
-            // 资源名称
-            // 
-            this.资源名称.HeaderText = "资源名称";
-            this.资源名称.Name = "资源名称";
-            this.资源名称.Width = 150;
-            // 
-            // 操作类型
-            // 
-            this.操作类型.HeaderText = "操作类型";
-            this.操作类型.Name = "操作类型";
-            this.操作类型.Width = 150;
-            // 
-            // 授权结果
-            // 
-            this.授权结果.HeaderText = "授权结果";
-            this.授权结果.Name = "授权结果";
-            this.授权结果.Width = 150;
             // 
             // button1
             // 
@@ -166,6 +163,90 @@
             this.label3.Size = new System.Drawing.Size(67, 14);
             this.label3.TabIndex = 12;
             this.label3.Text = "时间段：";
+            // 
+            // 时间
+            // 
+            this.时间.HeaderText = "时间";
+            this.时间.Name = "时间";
+            this.时间.Width = 150;
+            // 
+            // 资源名称
+            // 
+            this.资源名称.HeaderText = "资源名称";
+            this.资源名称.Name = "资源名称";
+            this.资源名称.Width = 150;
+            // 
+            // 操作类型
+            // 
+            this.操作类型.HeaderText = "操作类型";
+            this.操作类型.Name = "操作类型";
+            this.操作类型.Width = 150;
+            // 
+            // 授权结果
+            // 
+            this.授权结果.HeaderText = "授权结果";
+            this.授权结果.Name = "授权结果";
+            this.授权结果.Width = 150;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Column8";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Column9";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Column10";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
             // 
             // user_history
             // 
@@ -208,15 +289,25 @@
         /// </summary>
         private System.Windows.Forms.Label label6; //条件筛选文本
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 时间;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 资源名称;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 操作类型;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 授权结果;
         /// <summary>
         /// 返回查询界面按钮
         /// </summary>
         private System.Windows.Forms.Button button1;  // 返回查询界面按钮
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 时间;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 资源名称;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 操作类型;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 授权结果;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }
