@@ -102,8 +102,8 @@
         }
 
         #endregion
-        private string resource;
-        private string worktype;
+        //private string resource;
+        //private string worktype;
         /// <summary>
         /// 查询按钮
         /// </summary>
