@@ -11,8 +11,8 @@ namespace Project
         /// <summary>
         /// 找到在规则内 返回action 否则返回字符串 hang
         /// </summary>
-        /// <param name="TARGET_NAME"></param>
-        /// <param name="PERSON_BUSINESS_TITLE"></param>
+        /// <param name="TARGET_NAME"></param>    //resource 
+        /// <param name="PERSON_BUSINESS_TITLE"></param>  
         /// <param name="PERSON_BUSINESS_TITLE_DETAIL"></param>
         /// <param name="PERSON_COMPANY"></param>
         /// <param name="PERSON_DEPTNAME"></param>
@@ -28,9 +28,16 @@ namespace Project
             int PERSON_COMPANY = -1, int PERSON_DEPTNAME = -1, int PERSON_JOB_CODE = -1, int PERSON_JOB_FAMILY = -1,
             int PERSON_LOCATION = -1, int PERSON_MGR_ID = -1, int PERSON_ROLLUP_1 = -1, int PERSON_ROLLUP_2 = -1, int PERSON_ROLLUP_3 = -1)
         {
+            int count = 0;
             for (int i = 0; i < Static.rule_index.Count; i++)
             {
+                
                 Rule rule = (Rule)Static.rule_index[i];
+                
+                if(rule.TARGET_NAME == TARGET_NAME)
+                {
+                    count++;
+                }
                 if ((rule.TARGET_NAME == TARGET_NAME || rule.TARGET_NAME == -1) &&
                     (rule.PERSON_BUSINESS_TITLE == PERSON_BUSINESS_TITLE || rule.PERSON_BUSINESS_TITLE == -1) &&
                     (rule.PERSON_BUSINESS_TITLE_DETAIL == PERSON_BUSINESS_TITLE_DETAIL || rule.PERSON_BUSINESS_TITLE_DETAIL == -1) &&
@@ -48,8 +55,26 @@ namespace Project
                     return rule.ACTION;
                 }
             }
+            if (count == 0) return "no_resource";
             return "hang";//没有搜到 挂起
         }
 
+        public string search(int resNAME, int acTYPE, int userTYPE)
+        {
+            for (int i = 0; i < Static.rule_index.Count; i++)
+            {
+                Rule rule = (Rule)Static.rule_index[i];
+                if(resNAME == rule.PERSON_BUSINESS_TITLE/*资源名称*/&&acTYPE == rule.PERSON_JOB_CODE/*操作类型*/&&userTYPE == rule.PERSON_MGR_ID/*用户类型*/)
+                {
+                    return rule.ACTION;  
+                }
+            }
+            return "NO"; //被挂起
+        }
+
+        public void add_rules(int userTYPE, int resNAME, int acTYPE, string result)
+        {
+            
+        }
     }
 }

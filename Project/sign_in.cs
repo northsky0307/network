@@ -96,7 +96,7 @@ namespace Project
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -127,6 +127,51 @@ namespace Project
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            Static.PERSON_DEPTNAME = textBox3.Text;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            Static.PERSON_BUSINESS_TITLE = textBox4.Text;
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            Static.PERSON_BUSINESS_TITLE_DETAIL = textBox6.Text;
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            Static.PERSON_COMPANY = textBox8.Text;
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            Static.PERSON_JOB_CODE = textBox5.Text;
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            Static.PERSON_JOB_FAMILY = textBox7.Text;
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            Static.PERSON_LOCATION = textBox9.Text;
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+            Static.PERSON_ROLLUP_3 = textBox11.Text;
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+            Static.PERSON_ROLLUP_1 = textBox10.Text;
         }
     }
 }

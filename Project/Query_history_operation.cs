@@ -43,12 +43,26 @@ namespace Project
             for(int i = 0; i < Static.query_history_index.Count; i ++)
             {
                 Query_history temp_query = (Query_history)Static.query_history_index[i];
-                if(temp_query.TARGET_NAME.ToString() == name) //查询条件 这个已经不合适了
+                if(temp_query.PERSON_MGR_ID.ToString() == name) //查询条件 这个已经不合适了
                 {
                     temp.Add(temp_query);
                 }
             }
             return temp;
         }
+        public ArrayList return_query_hang_history(string name)
+        {
+            ArrayList temp = new ArrayList();
+            for (int i = 0; i < Static.hang.Count; i++)
+            {
+                Query_history temp_query = (Query_history)Static.hang[i];
+                if (temp_query.PERSON_MGR_ID.ToString() == name) //查询条件 这个已经不合适了
+                {
+                    temp.Add(temp_query);
+                }
+            }
+            return temp;
+        }
+
     }
 }
