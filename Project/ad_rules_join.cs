@@ -16,12 +16,7 @@ namespace Project
         {
             InitializeComponent();
 
-            DataGridViewButtonColumn btnADD = new DataGridViewButtonColumn();
-            btnADD.Name = "btnADD";
-            btnADD.HeaderText = "增加";
-            btnADD.DefaultCellStyle.NullValue = "增加";
-            btnADD.Width = 61;
-            dataGridView1.Columns.Add(btnADD);
+            
 
             //DataGridViewButtonColumn btnMDF = new DataGridViewButtonColumn();
             //btnMDF.Name = "btnMDF";
@@ -40,11 +35,13 @@ namespace Project
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "btnADD" && e.RowIndex >= 0)  //单击添加
-            {
-                ad_ad_success form = new ad_ad_success();
-                form.Show();
-            }
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ad_ch_success form = new ad_ch_success();
+            form.Show();
         }
     }
 }

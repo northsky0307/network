@@ -79,6 +79,7 @@ namespace Project
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btnDELETE" && e.RowIndex >= 0)  //单击删除
             {
+                System.Console.WriteLine(e.RowIndex);
                 //dataGridView1.Rows[e.RowIndex].
                // dataGridView1.Rows.Remove(dataGridView1.Rows(e.RowIndex));
                 dataGridView1.Rows.RemoveAt(e.RowIndex);
@@ -92,12 +93,6 @@ namespace Project
             
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ad_rules_ch_2 form = new ad_rules_ch_2();
-            form.Show();
-            this.Dispose();
-        }
         
 
     }
