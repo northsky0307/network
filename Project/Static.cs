@@ -9,7 +9,7 @@ namespace Project
 {
     public static class Static
     {
-        public static string name;
+        //public static string name;
         public static ArrayList rule_index = new ArrayList(); //规则
         public static ArrayList query_history_index = new ArrayList(); //访问历史
         public static ArrayList hang = new ArrayList();//挂起访问
@@ -23,7 +23,7 @@ namespace Project
         public static string PERSON_LOCATION;
         public static string PERSON_MGR_ID;
         public static string PERSON_ROLLUP_1;
-        
+        public static string PERSON_ROLLUP_2;
         public static string PERSON_ROLLUP_3;
     }
 }

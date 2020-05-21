@@ -54,9 +54,10 @@ namespace Project
             this.Dispose();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //查询
         {
-            string user_name = Static.name;
+            //string user_name = Static.name;
+            //string user_name = Static.;
             RES = comboBox1.Text.Trim();
             int.TryParse(comboBox1.Text, out RESnum);
             //RESnum = int.Parse(RES);         //输入的int转换
