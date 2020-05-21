@@ -22,7 +22,7 @@ namespace Project
         //public static string name;
         public Sign_in()
         {
-            user_Datebase.Init();
+            //user_Datebase.Init();
             InitializeComponent();
         }
 
@@ -38,10 +38,58 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            Static.PERSON_BUSINESS_TITLE = textBox4.Text.Trim();
+
+            Static.PERSON_BUSINESS_TITLE_DETAIL = textBox6.Text.Trim();
+
+            Static.PERSON_COMPANY = textBox8.Text.Trim();
+
+            Static.PERSON_DEPTNAME = textBox3.Text.Trim();
+
+            Static.PERSON_JOB_CODE = textBox5.Text.Trim();
+
+            Static.PERSON_JOB_FAMILY = textBox7.Text.Trim();
+
+            Static.PERSON_LOCATION = textBox9.Text.Trim();
+
+            Static.PERSON_MGR_ID = textBox2.Text.Trim();
+
+            Static.PERSON_ROLLUP_1 = textBox10.Text.Trim();
+
+            Static.PERSON_ROLLUP_2 = textBox1.Text.Trim();
+
+            Static.PERSON_ROLLUP_3 = textBox11.Text.Trim();
+
+
+
+            //界面替换
+            if (Static.PERSON_MGR_ID != "-1") // MGR_ID 输入-1是admin
+            {
+                //界面替换
+                user_query form = new user_query();
+                form.Show();
+                this.Hide();
+
+                System.Console.WriteLine("type : user");
+            }
+            else
+            {
+                //admin
+                admin_func_choose form = new admin_func_choose();
+                form.Show();
+                this.Hide();
+                System.Console.WriteLine("type : admin");
+            }
+
+
+
+            /*
+
             //string name = textBox1.Text.Trim();
-            Static.name = textBox1.Text.Trim();
+            //Static.PERSON_ROLLUP_2 = textBox1.Text.Trim();
             System.Console.WriteLine("user name : " + Static.name);
-            string pass = textBox2.Text.Trim();
+            //string pass = textBox2.Text.Trim();
 
             //User_Information user = new User_Information("1", "1");
             //string current_password = user_Datebase.Query_User_Information(name);///正常返回密码， 异常返回-1
@@ -65,7 +113,7 @@ namespace Project
                     //Application.Run(form);
                     form.Show();
                     this.Hide();
-                    */
+
                     if (user_num == 0) // 用户
                     {
                         //界面替换
@@ -92,11 +140,11 @@ namespace Project
                     form.Show();
                 }
             }
+            */
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -131,47 +179,40 @@ namespace Project
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            Static.PERSON_DEPTNAME = textBox3.Text;
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            Static.PERSON_BUSINESS_TITLE = textBox4.Text;
+
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            Static.PERSON_BUSINESS_TITLE_DETAIL = textBox6.Text;
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-            Static.PERSON_COMPANY = textBox8.Text;
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            Static.PERSON_JOB_CODE = textBox5.Text;
+
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
-            Static.PERSON_JOB_FAMILY = textBox7.Text;
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
         {
-            Static.PERSON_LOCATION = textBox9.Text;
         }
 
         private void textBox11_TextChanged(object sender, EventArgs e)
         {
-            Static.PERSON_ROLLUP_3 = textBox11.Text;
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
         {
-            Static.PERSON_ROLLUP_1 = textBox10.Text;
         }
     }
 }
