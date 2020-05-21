@@ -19,7 +19,7 @@ namespace Project
             InitializeComponent();
 
             
-            for (int i = 0; i < Static.rule_index.Count; i++)
+            for (int i = 0; i < 3000/*Static.rule_index.Count*/; i++)
             {
                 Rule query_out_his = (Rule)Static.rule_index[i];
 

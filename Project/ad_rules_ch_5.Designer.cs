@@ -44,22 +44,9 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
-<<<<<<<< HEAD:Project/ad_rules_ch_5.Designer.cs
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-========
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>>> 60d9f58f73510805de4e80b88a6461a179afe372:5.15.12.24/network-master/network-master/Project/ad_rules_ch.Designer.cs
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,11 +85,7 @@
             this.dataGridView1.RowHeadersWidth = 30;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(724, 313);
-<<<<<<<< HEAD:Project/ad_rules_ch_5.Designer.cs
             this.dataGridView1.TabIndex = 4;
-========
-            this.dataGridView1.TabIndex = 0;
->>>>>>>> 60d9f58f73510805de4e80b88a6461a179afe372:5.15.12.24/network-master/network-master/Project/ad_rules_ch.Designer.cs
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // 资源类型
@@ -197,7 +180,6 @@
             this.button2.Text = "增加规则";
             this.button2.UseVisualStyleBackColor = true;
             // 
-<<<<<<<< HEAD:Project/ad_rules_ch_5.Designer.cs
             // label1
             // 
             this.label1.AutoSize = true;
@@ -207,55 +189,6 @@
             this.label1.Size = new System.Drawing.Size(114, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "已有规则：";
-========
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
->>>>>>>> 60d9f58f73510805de4e80b88a6461a179afe372:5.15.12.24/network-master/network-master/Project/ad_rules_ch.Designer.cs
             // 
             // button3
             // 
@@ -263,7 +196,6 @@
             this.button3.Location = new System.Drawing.Point(690, 406);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 32);
-<<<<<<<< HEAD:Project/ad_rules_ch_5.Designer.cs
             this.button3.TabIndex = 7;
             this.button3.Text = "下一页";
             this.button3.UseVisualStyleBackColor = true;
@@ -280,32 +212,12 @@
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // ad_rules_ch_5
-========
-            this.button3.TabIndex = 4;
-            this.button3.Text = "下一页";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // ad_rules_ch
->>>>>>>> 60d9f58f73510805de4e80b88a6461a179afe372:5.15.12.24/network-master/network-master/Project/ad_rules_ch.Designer.cs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-<<<<<<<< HEAD:Project/ad_rules_ch_5.Designer.cs
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-========
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
->>>>>>>> 60d9f58f73510805de4e80b88a6461a179afe372:5.15.12.24/network-master/network-master/Project/ad_rules_ch.Designer.cs
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
@@ -335,21 +247,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Button button2;
-<<<<<<<< HEAD:Project/ad_rules_ch_5.Designer.cs
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-========
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.Button button3;
->>>>>>>> 60d9f58f73510805de4e80b88a6461a179afe372:5.15.12.24/network-master/network-master/Project/ad_rules_ch.Designer.cs
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }
