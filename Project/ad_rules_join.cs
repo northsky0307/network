@@ -15,6 +15,20 @@ namespace Project
         public ad_rules_join()
         {
             InitializeComponent();
+
+            DataGridViewButtonColumn btnADD = new DataGridViewButtonColumn();
+            btnADD.Name = "btnADD";
+            btnADD.HeaderText = "增加";
+            btnADD.DefaultCellStyle.NullValue = "增加";
+            btnADD.Width = 61;
+            dataGridView1.Columns.Add(btnADD);
+
+            //DataGridViewButtonColumn btnMDF = new DataGridViewButtonColumn();
+            //btnMDF.Name = "btnMDF";
+            //btnMDF.HeaderText = "修改";
+            //btnMDF.DefaultCellStyle.NullValue = "修改";
+            //btnMDF.Width = 61;
+            //dataGridView1.Columns.Add(btnMDF);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -26,13 +40,11 @@ namespace Project
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "btnADD" && e.RowIndex >= 0)  //单击添加
+            {
+                ad_ad_success form = new ad_ad_success();
+                form.Show();
+            }
         }
-
-        private void ad_rules_join_Load(object sender, EventArgs e)
-        {
-
-        }
-        
     }
 }

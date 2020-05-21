@@ -50,10 +50,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(907, 31);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(680, 25);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 51);
+            this.button1.Size = new System.Drawing.Size(91, 41);
             this.button1.TabIndex = 0;
             this.button1.Text = "返回";
             this.button1.UseVisualStyleBackColor = true;
@@ -63,10 +62,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(59, 44);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(44, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 25);
+            this.label1.Size = new System.Drawing.Size(114, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "可选规则：";
             // 
@@ -88,131 +86,101 @@
             this.Column7,
             this.Column8,
             this.Column9});
-            this.dataGridView1.Location = new System.Drawing.Point(64, 101);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(48, 81);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(964, 388);
+            this.dataGridView1.Size = new System.Drawing.Size(723, 310);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // 资源类型
             // 
             this.资源类型.HeaderText = "资源类型";
-            this.资源类型.MinimumWidth = 6;
             this.资源类型.Name = "资源类型";
             this.资源类型.ReadOnly = true;
-            this.资源类型.Width = 125;
             // 
             // 用户类型
             // 
             this.用户类型.HeaderText = "用户类型";
-            this.用户类型.MinimumWidth = 6;
             this.用户类型.Name = "用户类型";
             this.用户类型.ReadOnly = true;
-            this.用户类型.Width = 125;
             // 
             // 操作类型
             // 
             this.操作类型.HeaderText = "操作类型";
-            this.操作类型.MinimumWidth = 6;
             this.操作类型.Name = "操作类型";
             this.操作类型.ReadOnly = true;
-            this.操作类型.Width = 125;
             // 
             // 返回结果
             // 
             this.返回结果.HeaderText = "返回结果";
-            this.返回结果.MinimumWidth = 6;
             this.返回结果.Name = "返回结果";
             this.返回结果.ReadOnly = true;
-            this.返回结果.Width = 125;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Column1";
-            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Column2";
-            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Column3";
-            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 125;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Column4";
-            this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 125;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Column5";
-            this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 125;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Column6";
-            this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 125;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Column7";
-            this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 125;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Column8";
-            this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
-            this.Column8.Width = 125;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "Column9";
-            this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
-            this.Column9.Width = 125;
             // 
             // ad_rules_join
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 562);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ad_rules_join";
             this.Text = "批量添加规则";
-            this.Load += new System.EventHandler(this.ad_rules_join_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
