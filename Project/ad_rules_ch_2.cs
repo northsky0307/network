@@ -84,12 +84,11 @@ namespace Project
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btnMDF" && e.RowIndex >= 0)  //单击修改
             {
-                ad_ch_success form = new ad_ch_success();
-                form.Show();
+
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btnDELETE" && e.RowIndex >= 0)  //单击删除
             {
-                dataGridView1.Rows.RemoveAt(e.RowIndex);
+
             }
         }
     }
