@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class user_input_error : Form
+    public partial class first_use : Form
     {
-        public user_input_error()
+        public first_use()
         {
             InitializeComponent();
         }
@@ -22,9 +22,8 @@ namespace Project
             this.Dispose();
         }
 
-        private void user_input_error_Load(object sender, EventArgs e)
+        private void first_use_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
