@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
 
 namespace Project
 {
@@ -60,6 +62,7 @@ namespace Project
                 Static.rule_index.Add(rule);//写入ArrayList
             }
             mysr.Close();
+            
         }
 
         /// <summary>
