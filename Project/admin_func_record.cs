@@ -70,6 +70,8 @@ namespace Project
             Application.Exit(e);
         }
 
+
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
