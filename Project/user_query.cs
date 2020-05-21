@@ -13,6 +13,7 @@ namespace Project
 {
     public partial class user_query : Form
     {
+
         public user_query()
         {
             InitializeComponent();
@@ -22,7 +23,10 @@ namespace Project
         {
 
         }
-
+        //string TARGET_NAME;
+        //string WKTP;
+        //int TARGET_NAMEnum = 0;
+        //int WKTPnum = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -45,36 +49,128 @@ namespace Project
         private void button2_Click(object sender, EventArgs e)
         {
             //界面替换 点击退出登录按钮  回到登陆界面
+            /*
             Sign_in sign_In = new Sign_in();
             sign_In.Show();
             this.Dispose();
+            */
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //查询
         {
-            string user_name = Static.name;
-            user_do_search user_Do_Search = new user_do_search();
-            user_Do_Search.Show();
-            this.Dispose();
+            int TARGET_NAMEnum = -1;
+            string TARGET_NAME = comboBox1.Text.Trim();
+            int.TryParse(TARGET_NAME, out TARGET_NAMEnum);
+            if (TARGET_NAMEnum != -1)
+            {
+                Rule_operation search_rules = new Rule_operation();
+                Query_history_operation query_History_Operation = new Query_history_operation();
 
-            //ArrayList test11 = new ArrayList();
-            //Query_history_database test1 = new Query_history_database();
-            //test11 = test1.return_query_history(user_name);
-            Query_history test1 = (Query_history)Static.query_history_index[1];
-            Console.WriteLine(test1.TARGET_NAME) ;
+                string result = search_rules.Find(/*comboBox1.Text*/TARGET_NAMEnum,
+                   Convert.ToInt32(Static.PERSON_BUSINESS_TITLE),
+                   Convert.ToInt32(Static.PERSON_BUSINESS_TITLE_DETAIL),
+                   Convert.ToInt32(Static.PERSON_COMPANY),
+                   Convert.ToInt32(Static.PERSON_DEPTNAME),
+                   Convert.ToInt32(Static.PERSON_JOB_CODE),
+                   Convert.ToInt32(Static.PERSON_JOB_FAMILY),
+                   Convert.ToInt32(Static.PERSON_LOCATION),
+                   Convert.ToInt32(Static.PERSON_MGR_ID),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_1),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_2),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_3));
+
+                if (result == "add_access")
+                {
+                    user_do_search user_Do_Search = new user_do_search();
+                    user_Do_Search.Show();
+                    this.Dispose();
+                    //增加访问记录
+                    query_History_Operation.Add_query_history(result, 
+                        /*comboBox1.Text*/TARGET_NAMEnum,
+                   Convert.ToInt32(Static.PERSON_BUSINESS_TITLE),
+                   Convert.ToInt32(Static.PERSON_BUSINESS_TITLE_DETAIL),
+                   Convert.ToInt32(Static.PERSON_COMPANY),
+                   Convert.ToInt32(Static.PERSON_DEPTNAME),
+                   Convert.ToInt32(Static.PERSON_JOB_CODE),
+                   Convert.ToInt32(Static.PERSON_JOB_FAMILY),
+                   Convert.ToInt32(Static.PERSON_LOCATION),
+                   Convert.ToInt32(Static.PERSON_MGR_ID),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_1),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_2),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_3));
+
+                }
+                else if (result == "remove_access")
+                {
+                    user_no_limit error_tip = new user_no_limit();
+                    error_tip.Show();
+
+                    //增加访问记录
+                    query_History_Operation.Add_query_history(result,
+                        /*comboBox1.Text*/TARGET_NAMEnum,
+                   Convert.ToInt32(Static.PERSON_BUSINESS_TITLE),
+                   Convert.ToInt32(Static.PERSON_BUSINESS_TITLE_DETAIL),
+                   Convert.ToInt32(Static.PERSON_COMPANY),
+                   Convert.ToInt32(Static.PERSON_DEPTNAME),
+                   Convert.ToInt32(Static.PERSON_JOB_CODE),
+                   Convert.ToInt32(Static.PERSON_JOB_FAMILY),
+                   Convert.ToInt32(Static.PERSON_LOCATION),
+                   Convert.ToInt32(Static.PERSON_MGR_ID),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_1),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_2),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_3));
+                }
+                else if (result == "hang")
+                {
+                    user_no_rule error_tip = new user_no_rule();
+                    error_tip.Show();
+                    //增加一条挂起访问记录 arraylist
+                    Hang hAng = new Hang(/*comboBox1.Text*/TARGET_NAMEnum,
+                   Convert.ToInt32(Static.PERSON_BUSINESS_TITLE),
+                   Convert.ToInt32(Static.PERSON_BUSINESS_TITLE_DETAIL),
+                   Convert.ToInt32(Static.PERSON_COMPANY),
+                   Convert.ToInt32(Static.PERSON_DEPTNAME),
+                   Convert.ToInt32(Static.PERSON_JOB_CODE),
+                   Convert.ToInt32(Static.PERSON_JOB_FAMILY),
+                   Convert.ToInt32(Static.PERSON_LOCATION),
+                   Convert.ToInt32(Static.PERSON_MGR_ID),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_1),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_2),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_3));
+                    Static.hang.Add(hAng);
+                    System.Console.WriteLine(Static.hang.Count);
+                }
+                else if (result == "no_resource")
+                {
+                    user_no_resource error_tip = new user_no_resource();
+                    error_tip.Show();
+                }
+
+            }
+            else
+            {
+                user_input_error form = new user_input_error();
+                form.Show();
+            }
             
-            //System.Console.WriteLine("right" + user_name);
-            //Query_history  search    = new   Query_history(user_name, resource, worktype,1,0);
+            
+            
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            resource = comboBox1.Text;
+            //RES = comboBox1.Text.Trim();
+            //resource = comboBox1.Text;
+            //RESnum = int.Parse(RES);
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            worktype = comboBox2.Text;
+            //worktype = comboBox2.Text;
+            //WKTP = comboBox2.Text.Trim();
+            //resource = comboBox1.Text;
+            //WKTPnum = int.Parse(WKTP);
         }
     }
 }

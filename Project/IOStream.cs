@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
 
 namespace Project
 {
@@ -60,6 +62,7 @@ namespace Project
                 Static.rule_index.Add(rule);//写入ArrayList
             }
             mysr.Close();
+            
         }
 
         /// <summary>
@@ -118,7 +121,7 @@ namespace Project
 
             while ((str = mysr.ReadLine()) != null)
             {
-                //System.Console.WriteLine(str);
+                System.Console.WriteLine(str);
                 now_string = str.Split(',');
                 ACTION = now_string[0];
                 TARGET_NAME = Convert.ToInt32(now_string[1]);

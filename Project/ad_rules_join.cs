@@ -15,6 +15,17 @@ namespace Project
         public ad_rules_join()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
+
+            //DataGridViewButtonColumn btnMDF = new DataGridViewButtonColumn();
+            //btnMDF.Name = "btnMDF";
+            //btnMDF.HeaderText = "修改";
+            //btnMDF.DefaultCellStyle.NullValue = "修改";
+            //btnMDF.Width = 61;
+            //dataGridView1.Columns.Add(btnMDF);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -23,12 +34,18 @@ namespace Project
             form.Show();
             this.Dispose();
         }
-        //关闭子窗口，同时结束父窗口
-        protected override void OnClosing(CancelEventArgs e)
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            base.OnClosing(e);
-            Application.Exit(e);
+            
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ad_ch_success form = new ad_ch_success();
+            form.Show();
+        }
+
         private void ad_rules_join_Load(object sender, EventArgs e)
         {
 

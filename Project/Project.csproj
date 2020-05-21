@@ -15,7 +15,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -40,11 +40,47 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ad_add_rules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ad_add_rules.Designer.cs">
+      <DependentUpon>ad_add_rules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ad_ch_success.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ad_ch_success.Designer.cs">
+      <DependentUpon>ad_ch_success.cs</DependentUpon>
+    </Compile>
     <Compile Include="ad_rules_ch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ad_rules_ch.Designer.cs">
       <DependentUpon>ad_rules_ch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ad_rules_ch_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ad_rules_ch_2.Designer.cs">
+      <DependentUpon>ad_rules_ch_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ad_rules_ch_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ad_rules_ch_3.Designer.cs">
+      <DependentUpon>ad_rules_ch_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ad_rules_ch_4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ad_rules_ch_4.Designer.cs">
+      <DependentUpon>ad_rules_ch_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ad_rules_ch_5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ad_rules_ch_5.Designer.cs">
+      <DependentUpon>ad_rules_ch_5.cs</DependentUpon>
     </Compile>
     <Compile Include="ad_rules_join.cs">
       <SubType>Form</SubType>
@@ -52,6 +88,13 @@
     <Compile Include="ad_rules_join.Designer.cs">
       <DependentUpon>ad_rules_join.cs</DependentUpon>
     </Compile>
+    <Compile Include="first_use.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="first_use.Designer.cs">
+      <DependentUpon>first_use.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hang.cs" />
     <Compile Include="IOStream.cs" />
     <Compile Include="Rule.cs" />
     <Compile Include="Query_history_operation.cs" />
@@ -80,12 +123,6 @@
     <Compile Include="admin_func_choose.Designer.cs">
       <DependentUpon>admin_func_choose.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_func_rules.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="admin_func_rules.Designer.cs">
-      <DependentUpon>admin_func_rules.cs</DependentUpon>
-    </Compile>
     <Compile Include="Rule_operation.cs" />
     <Compile Include="Static.cs" />
     <Compile Include="User_datebase.cs" />
@@ -103,6 +140,30 @@
       <DependentUpon>user_history.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
+    <Compile Include="user_input_error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_input_error.Designer.cs">
+      <DependentUpon>user_input_error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_no_limit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_no_limit.Designer.cs">
+      <DependentUpon>user_no_limit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_no_resource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_no_resource.Designer.cs">
+      <DependentUpon>user_no_resource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_no_rule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_no_rule.Designer.cs">
+      <DependentUpon>user_no_rule.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_query.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,8 +198,26 @@
     <EmbeddedResource Include="admin_func_record.resx">
       <DependentUpon>admin_func_record.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ad_add_rules.resx">
+      <DependentUpon>ad_add_rules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ad_ch_success.resx">
+      <DependentUpon>ad_ch_success.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ad_rules_ch.resx">
       <DependentUpon>ad_rules_ch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ad_rules_ch_2.resx">
+      <DependentUpon>ad_rules_ch_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ad_rules_ch_3.resx">
+      <DependentUpon>ad_rules_ch_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ad_rules_ch_4.resx">
+      <DependentUpon>ad_rules_ch_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ad_rules_ch_5.resx">
+      <DependentUpon>ad_rules_ch_5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ad_rules_join.resx">
       <DependentUpon>ad_rules_join.cs</DependentUpon>
@@ -149,14 +228,26 @@
     <EmbeddedResource Include="error_password.resx">
       <DependentUpon>error_password.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin_func_rules.resx">
-      <DependentUpon>admin_func_rules.cs</DependentUpon>
+    <EmbeddedResource Include="first_use.resx">
+      <DependentUpon>first_use.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_do_search.resx">
       <DependentUpon>user_do_search.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_history.resx">
       <DependentUpon>user_history.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_input_error.resx">
+      <DependentUpon>user_input_error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_no_limit.resx">
+      <DependentUpon>user_no_limit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_no_resource.resx">
+      <DependentUpon>user_no_resource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_no_rule.resx">
+      <DependentUpon>user_no_rule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_query.resx">
       <DependentUpon>user_query.cs</DependentUpon>
@@ -171,6 +262,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\20166734_143517161001_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_20200521_225436.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timg-6.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timg-7.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TIM图片20200521225551.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
