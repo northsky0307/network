@@ -60,8 +60,8 @@ namespace Project
             RES = comboBox1.Text.Trim();
             int.TryParse(comboBox1.Text, out RESnum);
             //RESnum = int.Parse(RES);         //输入的int转换
-            //int.TryParse(comboBox2.Text, out WKTPnum);
-            //WKTP = comboBox2.Text.Trim();
+            int.TryParse(comboBox2.Text, out WKTPnum);
+            WKTP = comboBox2.Text.Trim();
             //WKTPnum = int.Parse(WKTP);
             if (RESnum != 0 && WKTPnum != 0)
             {
