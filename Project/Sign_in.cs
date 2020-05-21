@@ -22,7 +22,7 @@ namespace Project
         //public static string name;
         public Sign_in()
         {
-            user_Datebase.Init();
+            //user_Datebase.Init();
             InitializeComponent();
         }
 
@@ -47,19 +47,43 @@ namespace Project
 
             Static.PERSON_DEPTNAME = textBox3.Text.Trim();
 
-            Static.PERSON_ROLLUP_2 = textBox1.Text.Trim();
-
-            Static.PERSON_MGR_ID = textBox2.Text.Trim();
-
             Static.PERSON_JOB_CODE = textBox5.Text.Trim();
 
             Static.PERSON_JOB_FAMILY = textBox7.Text.Trim();
 
             Static.PERSON_LOCATION = textBox9.Text.Trim();
 
-            Static.PERSON_ROLLUP_3 = textBox11.Text.Trim();
+            Static.PERSON_MGR_ID = textBox2.Text.Trim();
 
             Static.PERSON_ROLLUP_1 = textBox10.Text.Trim();
+
+            Static.PERSON_ROLLUP_2 = textBox1.Text.Trim();
+
+            Static.PERSON_ROLLUP_3 = textBox11.Text.Trim();
+
+
+
+            //界面替换
+            if (Static.PERSON_MGR_ID != "-1") // MGR_ID 输入-1是admin
+            {
+                //界面替换
+                user_query form = new user_query();
+                form.Show();
+                this.Hide();
+
+                System.Console.WriteLine("type : user");
+            }
+            else
+            {
+                //admin
+                admin_func_choose form = new admin_func_choose();
+                form.Show();
+                this.Hide();
+                System.Console.WriteLine("type : admin");
+            }
+
+
+
             /*
 
             //string name = textBox1.Text.Trim();
@@ -89,7 +113,7 @@ namespace Project
                     //Application.Run(form);
                     form.Show();
                     this.Hide();
-                    
+
                     if (user_num == 0) // 用户
                     {
                         //界面替换
@@ -159,7 +183,7 @@ namespace Project
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -172,7 +196,7 @@ namespace Project
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
