@@ -28,5 +28,11 @@ namespace Project
         {
 
         }
+
+        private void ad_rules_join_Load(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

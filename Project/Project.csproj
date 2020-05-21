@@ -116,12 +116,6 @@
     <Compile Include="admin_func_choose.Designer.cs">
       <DependentUpon>admin_func_choose.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin_func_rules.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="admin_func_rules.Designer.cs">
-      <DependentUpon>admin_func_rules.cs</DependentUpon>
-    </Compile>
     <Compile Include="Rule_operation.cs" />
     <Compile Include="Static.cs" />
     <Compile Include="User_datebase.cs" />
@@ -226,9 +220,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="error_password.resx">
       <DependentUpon>error_password.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="admin_func_rules.resx">
-      <DependentUpon>admin_func_rules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_do_search.resx">
       <DependentUpon>user_do_search.cs</DependentUpon>
