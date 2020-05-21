@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Project
 {
@@ -15,6 +16,7 @@ namespace Project
         public admin_func_rules()
         {
             InitializeComponent();
+            
         }
 
         private void admin_func_rules_Load(object sender, EventArgs e)

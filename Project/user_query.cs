@@ -23,10 +23,10 @@ namespace Project
         {
 
         }
-        string RES;
-        string WKTP;
-        int RESnum = 0;
-        int WKTPnum = 0;
+        //string TARGET_NAME;
+        //string WKTP;
+        //int TARGET_NAMEnum = 0;
+        //int WKTPnum = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -49,25 +49,40 @@ namespace Project
         private void button2_Click(object sender, EventArgs e)
         {
             //界面替换 点击退出登录按钮  回到登陆界面
+            /*
             Sign_in sign_In = new Sign_in();
             sign_In.Show();
             this.Dispose();
+            */
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //查询
         {
-            string user_name = Static.name;
-            RES = comboBox1.Text.Trim();
-            int.TryParse(comboBox1.Text, out RESnum);
+            //string user_name = Static.name;
+            //string user_name = Static.;
+            int TARGET_NAMEnum = -1;
+            //string TARGET_NAME = comboBox1.Text.Trim();
+            int.TryParse(comboBox1.Text.Trim(), out TARGET_NAMEnum);
             //RESnum = int.Parse(RES);         //输入的int转换
-            int.TryParse(comboBox2.Text, out WKTPnum);
-            WKTP = comboBox2.Text.Trim();
+            //int.TryParse(comboBox2.Text, out WKTPnum);
+            //WKTP = comboBox2.Text.Trim();
             //WKTPnum = int.Parse(WKTP);
-            if (RESnum != 0 && WKTPnum != 0)
+            if (TARGET_NAMEnum != -1)
             {
                 Rule_operation search_rules = new Rule_operation();
 
-                string result = search_rules.Find(/*comboBox1.Text*/RESnum, -1, -1, -1, -1, -1, -1, -1, -1/*用户名称*/, -1, WKTPnum/*comboBox2.Text*/, -1);
+                string result = search_rules.Find(/*comboBox1.Text*/TARGET_NAMEnum,
+                   Convert.ToInt32(Static.PERSON_BUSINESS_TITLE),
+                   Convert.ToInt32(Static.PERSON_BUSINESS_TITLE_DETAIL),
+                   Convert.ToInt32(Static.PERSON_COMPANY),
+                   Convert.ToInt32(Static.PERSON_DEPTNAME),
+                   Convert.ToInt32(Static.PERSON_JOB_CODE),
+                   Convert.ToInt32(Static.PERSON_JOB_FAMILY),
+                   Convert.ToInt32(Static.PERSON_LOCATION),
+                   Convert.ToInt32(Static.PERSON_MGR_ID),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_1),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_2),
+                   Convert.ToInt32(Static.PERSON_ROLLUP_3));
 
                 if (result == "add_access")
                 {

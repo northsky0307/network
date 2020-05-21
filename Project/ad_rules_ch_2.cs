@@ -92,5 +92,10 @@ namespace Project
                 dataGridView1.Rows.RemoveAt(e.RowIndex);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
