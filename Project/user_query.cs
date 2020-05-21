@@ -13,6 +13,7 @@ namespace Project
 {
     public partial class user_query : Form
     {
+
         public user_query()
         {
             InitializeComponent();
@@ -22,7 +23,10 @@ namespace Project
         {
 
         }
-
+        string RES;
+        string WKTP;
+        int RESnum = 0;
+        int WKTPnum = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -53,28 +57,67 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             string user_name = Static.name;
-            user_do_search user_Do_Search = new user_do_search();
-            user_Do_Search.Show();
-            this.Dispose();
+            RES = comboBox1.Text.Trim();
+            int.TryParse(comboBox1.Text, out RESnum);
+            //RESnum = int.Parse(RES);         //输入的int转换
+            int.TryParse(comboBox2.Text, out WKTPnum);
+            WKTP = comboBox2.Text.Trim();
+            //WKTPnum = int.Parse(WKTP);
+            if (RESnum != 0 && WKTPnum != 0)
+            {
+                Rule_operation search_rules = new Rule_operation();
 
-            //ArrayList test11 = new ArrayList();
-            //Query_history_database test1 = new Query_history_database();
-            //test11 = test1.return_query_history(user_name);
-            Query_history test1 = (Query_history)Static.query_history_index[1];
-            Console.WriteLine(test1.TARGET_NAME) ;
+                string result = search_rules.Find(/*comboBox1.Text*/RESnum, -1, -1, -1, -1, -1, -1, -1, -1/*用户名称*/, -1, WKTPnum/*comboBox2.Text*/, -1);
+
+                if (result == "add_access")
+                {
+                    user_do_search user_Do_Search = new user_do_search();
+                    user_Do_Search.Show();
+                    this.Dispose();
+                    //增加访问记录
+                }
+                else if (result == "remove_access")
+                {
+                    user_no_limit error_tip = new user_no_limit();
+                    error_tip.Show();
+                }
+                else if (result == "hang")
+                {
+                    user_no_rule error_tip = new user_no_rule();
+                    error_tip.Show();
+                    //增加一条挂起访问记录 arraylist
+                }
+                else if (result == "no_resource")
+                {
+                    user_no_resource error_tip = new user_no_resource();
+                    error_tip.Show();
+                }
+
+            }
+            else
+            {
+                user_input_error form = new user_input_error();
+                form.Show();
+            }
             
-            //System.Console.WriteLine("right" + user_name);
-            //Query_history  search    = new   Query_history(user_name, resource, worktype,1,0);
+            
+            
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            resource = comboBox1.Text;
+            //RES = comboBox1.Text.Trim();
+            //resource = comboBox1.Text;
+            //RESnum = int.Parse(RES);
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            worktype = comboBox2.Text;
+            //worktype = comboBox2.Text;
+            //WKTP = comboBox2.Text.Trim();
+            //resource = comboBox1.Text;
+            //WKTPnum = int.Parse(WKTP);
         }
     }
 }
