@@ -17,6 +17,10 @@ namespace Project
         public ad_rules_join()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.dataGridView1.Rows.Clear();
             Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
 

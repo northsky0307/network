@@ -35,6 +35,7 @@ namespace Project
             int PERSON_ROLLUP_1;
             int PERSON_ROLLUP_2;
             int PERSON_ROLLUP_3;
+            str = mysr.ReadLine();
             while ((str = mysr.ReadLine()) != null)
             {
 
