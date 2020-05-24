@@ -16,6 +16,9 @@ namespace Project
         public user_history()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
             Query_history_operation query_History_Operation = new Query_history_operation(); //查询操作类
             ArrayList query = query_History_Operation.return_query_history(
@@ -34,27 +37,23 @@ namespace Project
             {
 
                 Query_history query_out_his = (Query_history)query[i];
-           
                 int index = this.dataGridView1.Rows.Add();
 
-                this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.REQUEST_DATE;  //时间
-
+                this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.ACTION;  //授权结果
                 this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
-
-                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
-
-                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //授权结果
-
-                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
-                this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
-                this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
-                this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
-                this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
-                this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
-                this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
-                this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_COMPANY;
+                this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_DEPTNAME;
+                this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_JOB_CODE;
+                this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_JOB_FAMILY;
+                this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_LOCATION;
+                this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_MGR_ID;
+                this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_ROLLUP_1;
+                this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_2;
                 this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
-                
+                this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.REQUEST_DATE;
+
             }
             // System.Console.WriteLine(Static.query_history_index.Count);
         }
@@ -448,6 +447,7 @@ namespace Project
 
                 }
             }
+            /*
             if ((string)comboBox2.SelectedItem == "允许"&&(string)comboBox1.SelectedItem == null)
             {
                 this.dataGridView1.Rows.Clear();
@@ -493,6 +493,7 @@ namespace Project
 
                 }
             }
+            */
             if ((string)comboBox2.SelectedItem == "允许" && (string)comboBox1.SelectedItem == "全部")
             {
                 this.dataGridView1.Rows.Clear();
@@ -759,6 +760,7 @@ namespace Project
 
                 }
             }
+            /*
             if ((string)comboBox2.SelectedItem == "拒绝"&&(string)comboBox1.SelectedItem == null)
             {
                 this.dataGridView1.Rows.Clear();
@@ -803,6 +805,7 @@ namespace Project
 
                 }
             }
+            */
             if ((string)comboBox2.SelectedItem == "拒绝"&&(string)comboBox1.SelectedItem == "全部")
             {
                 this.dataGridView1.Rows.Clear();
@@ -1118,6 +1121,7 @@ namespace Project
 
                 }
             }
+            /*
             if ((string)comboBox2.SelectedItem == "待处理"&&(string)comboBox1.SelectedItem == null)
             {
                 this.dataGridView1.Rows.Clear();
@@ -1158,6 +1162,7 @@ namespace Project
                     this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.REQUEST_DATE;  //时间 
                 }
             }
+            */
 
             if ((string)comboBox2.SelectedItem == "待处理" && (string)comboBox1.SelectedItem == "全部")
             {
@@ -1456,6 +1461,11 @@ namespace Project
                     }
                 }
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

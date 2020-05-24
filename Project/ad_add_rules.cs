@@ -15,10 +15,15 @@ namespace Project
         public ad_add_rules()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            ad_rules_ch form = new ad_rules_ch();
+            form.Show();
             this.Dispose();
         }
 
@@ -26,6 +31,27 @@ namespace Project
         {
             //单击按钮后添加规则  根据textbox1-4  
             //若想在规则列表中看到返回再进
+            Rule rule = new Rule(Convert.ToInt32(textBox1.Text.Trim()),
+                Convert.ToInt32(textBox2.Text.Trim()),
+                Convert.ToInt32(textBox3.Text.Trim()),
+                Convert.ToInt32(textBox4.Text.Trim()),
+                Convert.ToInt32(textBox5.Text.Trim()),
+                Convert.ToInt32(textBox6.Text.Trim()),
+                Convert.ToInt32(textBox7.Text.Trim()),
+                Convert.ToInt32(textBox8.Text.Trim()),
+                Convert.ToInt32(textBox9.Text.Trim()),
+                Convert.ToInt32(textBox10.Text.Trim()),
+                Convert.ToInt32(textBox11.Text.Trim()),
+                Convert.ToInt32(textBox12.Text.Trim()),
+                Convert.ToInt32(textBox13.Text.Trim())
+                );
+
+            IOStream iOStream = new IOStream();
+            Static.rule_index.Add(rule);
+            iOStream.write_rule(rule);
+            ad_ch_success ad_Ch_Success = new ad_ch_success();
+            ad_Ch_Success.Show();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -94,6 +120,16 @@ namespace Project
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ad_add_rules_Load(object sender, EventArgs e)
         {
 
         }

@@ -15,6 +15,9 @@ namespace Project
         public ad_rules_ch_2()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
             for (int i = 3001; i < 6000/*Static.rule_index.Count*/; i++)
             {
@@ -94,6 +97,11 @@ namespace Project
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ad_rules_ch_2_Load(object sender, EventArgs e)
         {
 
         }

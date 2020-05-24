@@ -66,9 +66,9 @@ namespace Project
                                         int PERSON_LOCATION, int PERSON_MGR_ID, int PERSON_ROLLUP_1, int PERSON_ROLLUP_2, int PERSON_ROLLUP_3) //获得用户的访问根据用户信息
         {
             ArrayList temp = new ArrayList();
-            for (int i = 0; i < Static.hang.Count; i++)
+            for (int i = 0; i < Static.hang_index.Count; i++)
             {
-                Hang temp_query = (Hang)Static.hang[i];
+                Hang temp_query = (Hang)Static.hang_index[i];
                 if ((temp_query.PERSON_BUSINESS_TITLE == PERSON_BUSINESS_TITLE) &&
                     (temp_query.PERSON_BUSINESS_TITLE_DETAIL == PERSON_BUSINESS_TITLE_DETAIL) &&
                     (temp_query.PERSON_COMPANY == PERSON_COMPANY) &&

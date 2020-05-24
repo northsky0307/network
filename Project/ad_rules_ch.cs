@@ -17,32 +17,31 @@ namespace Project
         public ad_rules_ch()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 
-            
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
+
             for (int i = 0; i <Static.rule_index.Count; i++)
             {
                 Rule query_out_his = (Rule)Static.rule_index[i];
 
+
                 int index = this.dataGridView1.Rows.Add();
 
-                this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.TARGET_NAME;  //资源类型
-
-                this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.PERSON_MGR_ID;   //用户类型
-
-                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_ROLLUP_2;  //操作类型
-
-                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.ACTION;  //返回结果
-
-                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
-                this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
-                this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
-                this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
-                this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_FAMILY;
-                this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_LOCATION;
-                this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_JOB_CODE;
-                this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.ACTION;  //授权结果
+                this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
+                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_COMPANY;
+                this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_DEPTNAME;
+                this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_JOB_CODE;
+                this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_JOB_FAMILY;
+                this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_LOCATION;
+                this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_MGR_ID;
+                this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_ROLLUP_1;
+                this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_2;
                 this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
-                
 
             }
             
@@ -90,10 +89,23 @@ namespace Project
         {
             ad_add_rules add_Rules = new ad_add_rules();
             add_Rules.Show();
+            this.Dispose();
             
         }
 
-        
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
 
+        private void ad_rules_ch_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

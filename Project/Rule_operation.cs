@@ -52,7 +52,7 @@ namespace Project
                     (rule.PERSON_ROLLUP_3 == PERSON_ROLLUP_3 || rule.PERSON_ROLLUP_3 == -1)
                    )
                 {
-                    return rule.ACTION;
+                    return rule.ACTION == 0 ? "remove_access" : "add_access";
                 }
             }
             if (count == 0) return "no_resource";
@@ -66,7 +66,7 @@ namespace Project
                 Rule rule = (Rule)Static.rule_index[i];
                 if(resNAME == rule.PERSON_BUSINESS_TITLE/*资源名称*/&&acTYPE == rule.PERSON_JOB_CODE/*操作类型*/&&userTYPE == rule.PERSON_MGR_ID/*用户类型*/)
                 {
-                    return rule.ACTION;  
+                    return rule.ACTION == 0 ? "remove_access" : "add_access";
                 }
             }
             return "NO"; //被挂起

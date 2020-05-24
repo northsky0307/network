@@ -17,6 +17,9 @@ namespace Project
         public user_query()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -83,7 +86,7 @@ namespace Project
                 {
                     user_do_search user_Do_Search = new user_do_search();
                     user_Do_Search.Show();
-                    this.Dispose();
+                    //this.Dispose();
                     //增加访问记录
                     query_History_Operation.Add_query_history(result, 
                         /*comboBox1.Text*/TARGET_NAMEnum,
@@ -125,7 +128,8 @@ namespace Project
                     user_no_rule error_tip = new user_no_rule();
                     error_tip.Show();
                     //增加一条挂起访问记录 arraylist
-                    Hang hAng = new Hang(/*comboBox1.Text*/TARGET_NAMEnum,
+                    Hang hAng = new Hang();
+                    hAng.Add_hang(/*comboBox1.Text*/TARGET_NAMEnum,
                    Convert.ToInt32(Static.PERSON_BUSINESS_TITLE),
                    Convert.ToInt32(Static.PERSON_BUSINESS_TITLE_DETAIL),
                    Convert.ToInt32(Static.PERSON_COMPANY),
@@ -137,8 +141,10 @@ namespace Project
                    Convert.ToInt32(Static.PERSON_ROLLUP_1),
                    Convert.ToInt32(Static.PERSON_ROLLUP_2),
                    Convert.ToInt32(Static.PERSON_ROLLUP_3));
-                    Static.hang.Add(hAng);
-                    System.Console.WriteLine(Static.hang.Count);
+                    Static.hang_index.Add(hAng);
+                    IOStream iOStream = new IOStream();
+                    iOStream.write_hang(hAng);
+                    System.Console.WriteLine(Static.hang_index.Count);
                 }
                 else if (result == "no_resource")
                 {
@@ -171,6 +177,11 @@ namespace Project
             //WKTP = comboBox2.Text.Trim();
             //resource = comboBox1.Text;
             //WKTPnum = int.Parse(WKTP);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

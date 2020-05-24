@@ -14,7 +14,6 @@ namespace Project
     interface IMyForm
     {
         void MethodToImplement();
-       
     }
 
     public partial class Sign_in : Form//,IMyForm
@@ -45,30 +44,9 @@ namespace Project
 
             Static.PERSON_BUSINESS_TITLE = textBox1.Text.Trim();
 
-            Static.PERSON_BUSINESS_TITLE_DETAIL = textBox2.Text.Trim();
-
-            Static.PERSON_COMPANY = textBox3.Text.Trim();
-
-            Static.PERSON_DEPTNAME = textBox4.Text.Trim();
-
-            Static.PERSON_JOB_CODE = textBox5.Text.Trim();
-
-            Static.PERSON_JOB_FAMILY = textBox6.Text.Trim();
-
-            Static.PERSON_LOCATION = textBox7.Text.Trim();
-
-            Static.PERSON_MGR_ID = textBox8.Text.Trim();
-
-            Static.PERSON_ROLLUP_1 = textBox9.Text.Trim();
-
-            Static.PERSON_ROLLUP_2 = textBox10.Text.Trim();
-
-            Static.PERSON_ROLLUP_3 = textBox11.Text.Trim();
-
-
 
             //界面替换
-            if (Static.PERSON_MGR_ID != "-1") // MGR_ID 输入-1是admin
+            if (Static.PERSON_BUSINESS_TITLE != "-1") // MGR_ID 输入-1是admin
             {
                 //界面替换
                 user_query form = new user_query();
@@ -176,60 +154,28 @@ namespace Project
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox11_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-        }
-
+      
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void Sign_in_Load(object sender, EventArgs e)
+        {
+
+        }
+        
+ private void label8_Click(object sender, EventArgs e)
         {
 
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
