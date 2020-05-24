@@ -28,43 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.资源名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.操作类型 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.授权结果 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ACTION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TARGET_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_BUSINESS_TITLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_BUSINESS_TITLE_DETAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1PERSON_COMPANY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_DEPTNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_JOB_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_JOB_FAMILY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_LOCATION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_MGR_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_ROLLUP_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_ROLLUP_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_ROLLUP_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.REQUEST_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(300, 66);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("楷体", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.Aqua;
+            this.label1.Location = new System.Drawing.Point(998, 74);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 33);
+            this.label1.Size = new System.Drawing.Size(199, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = "查询历史";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.comboBox1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -74,185 +81,222 @@
             "三个月内",
             "半年内",
             "全部"});
-            this.comboBox1.Location = new System.Drawing.Point(293, 124);
+            this.comboBox1.Location = new System.Drawing.Point(588, 151);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.Size = new System.Drawing.Size(160, 23);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.Text = "全部";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
+            this.comboBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "允许",
             "拒绝",
             "待处理"});
-            this.comboBox2.Location = new System.Drawing.Point(585, 124);
+            this.comboBox2.Location = new System.Drawing.Point(968, 151);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
+            this.comboBox2.Size = new System.Drawing.Size(160, 23);
             this.comboBox2.TabIndex = 7;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(70, 125);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label6.Location = new System.Drawing.Point(309, 156);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 14);
+            this.label6.Size = new System.Drawing.Size(93, 20);
             this.label6.TabIndex = 8;
             this.label6.Text = "条件筛选";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.时间,
-            this.资源名称,
-            this.操作类型,
-            this.授权结果,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
+            this.ACTION,
+            this.TARGET_NAME,
+            this.PERSON_BUSINESS_TITLE,
+            this.PERSON_BUSINESS_TITLE_DETAIL,
+            this.Column1PERSON_COMPANY,
+            this.PERSON_DEPTNAME,
+            this.PERSON_JOB_CODE,
+            this.PERSON_JOB_FAMILY,
+            this.PERSON_LOCATION,
+            this.PERSON_MGR_ID,
+            this.PERSON_ROLLUP_1,
+            this.PERSON_ROLLUP_2,
+            this.PERSON_ROLLUP_3,
+            this.REQUEST_DATE});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(73, 170);
+            this.dataGridView1.Location = new System.Drawing.Point(58, 182);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 30;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(633, 226);
+            this.dataGridView1.Size = new System.Drawing.Size(1927, 588);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // 时间
+            // ACTION
             // 
-            this.时间.HeaderText = "时间";
-            this.时间.Name = "时间";
-            this.时间.Width = 150;
+            this.ACTION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ACTION.Frozen = true;
+            this.ACTION.HeaderText = "ACTION";
+            this.ACTION.Name = "ACTION";
+            this.ACTION.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ACTION.Width = 84;
             // 
-            // 资源名称
+            // TARGET_NAME
             // 
-            this.资源名称.HeaderText = "资源名称";
-            this.资源名称.Name = "资源名称";
-            this.资源名称.Width = 150;
+            this.TARGET_NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TARGET_NAME.Frozen = true;
+            this.TARGET_NAME.HeaderText = "TARGET_NAME";
+            this.TARGET_NAME.Name = "TARGET_NAME";
+            this.TARGET_NAME.Width = 124;
             // 
-            // 操作类型
+            // PERSON_BUSINESS_TITLE
             // 
-            this.操作类型.HeaderText = "操作类型";
-            this.操作类型.Name = "操作类型";
-            this.操作类型.Width = 150;
+            this.PERSON_BUSINESS_TITLE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.PERSON_BUSINESS_TITLE.HeaderText = "PERSON_BUSINESS_TITLE";
+            this.PERSON_BUSINESS_TITLE.Name = "PERSON_BUSINESS_TITLE";
+            this.PERSON_BUSINESS_TITLE.Width = 180;
             // 
-            // 授权结果
+            // PERSON_BUSINESS_TITLE_DETAIL
             // 
-            this.授权结果.HeaderText = "授权结果";
-            this.授权结果.Name = "授权结果";
-            this.授权结果.Width = 150;
+            this.PERSON_BUSINESS_TITLE_DETAIL.HeaderText = "PERSON_BUSINESS_TITLE_DETAIL";
+            this.PERSON_BUSINESS_TITLE_DETAIL.Name = "PERSON_BUSINESS_TITLE_DETAIL";
+            this.PERSON_BUSINESS_TITLE_DETAIL.Width = 240;
             // 
-            // Column1
+            // Column1PERSON_COMPANY
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.Column1PERSON_COMPANY.HeaderText = "PERSON_COMPANY";
+            this.Column1PERSON_COMPANY.Name = "Column1PERSON_COMPANY";
+            this.Column1PERSON_COMPANY.ReadOnly = true;
+            this.Column1PERSON_COMPANY.Width = 128;
             // 
-            // Column2
+            // PERSON_DEPTNAME
             // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.PERSON_DEPTNAME.HeaderText = "PERSON_DEPTNAME";
+            this.PERSON_DEPTNAME.Name = "PERSON_DEPTNAME";
+            this.PERSON_DEPTNAME.ReadOnly = true;
+            this.PERSON_DEPTNAME.Width = 136;
             // 
-            // Column3
+            // PERSON_JOB_CODE
             // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.PERSON_JOB_CODE.HeaderText = "PERSON_JOB_CODE";
+            this.PERSON_JOB_CODE.Name = "PERSON_JOB_CODE";
+            this.PERSON_JOB_CODE.ReadOnly = true;
+            this.PERSON_JOB_CODE.Width = 136;
             // 
-            // Column4
+            // PERSON_JOB_FAMILY
             // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.PERSON_JOB_FAMILY.HeaderText = "PERSON_JOB_FAMILY";
+            this.PERSON_JOB_FAMILY.Name = "PERSON_JOB_FAMILY";
+            this.PERSON_JOB_FAMILY.ReadOnly = true;
+            this.PERSON_JOB_FAMILY.Width = 152;
             // 
-            // Column5
+            // PERSON_LOCATION
             // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.PERSON_LOCATION.HeaderText = "PERSON_LOCATION";
+            this.PERSON_LOCATION.Name = "PERSON_LOCATION";
+            this.PERSON_LOCATION.ReadOnly = true;
+            this.PERSON_LOCATION.Width = 136;
             // 
-            // Column6
+            // PERSON_MGR_ID
             // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.PERSON_MGR_ID.HeaderText = "PERSON_MGR_ID";
+            this.PERSON_MGR_ID.Name = "PERSON_MGR_ID";
+            this.PERSON_MGR_ID.ReadOnly = true;
+            this.PERSON_MGR_ID.Width = 120;
             // 
-            // Column7
+            // PERSON_ROLLUP_1
             // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.PERSON_ROLLUP_1.HeaderText = "PERSON_ROLLUP_1";
+            this.PERSON_ROLLUP_1.Name = "PERSON_ROLLUP_1";
+            this.PERSON_ROLLUP_1.ReadOnly = true;
+            this.PERSON_ROLLUP_1.Width = 136;
             // 
-            // Column8
+            // PERSON_ROLLUP_2
             // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
+            this.PERSON_ROLLUP_2.HeaderText = "PERSON_ROLLUP_2";
+            this.PERSON_ROLLUP_2.Name = "PERSON_ROLLUP_2";
+            this.PERSON_ROLLUP_2.ReadOnly = true;
+            this.PERSON_ROLLUP_2.Width = 136;
             // 
-            // Column9
+            // PERSON_ROLLUP_3
             // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
+            this.PERSON_ROLLUP_3.HeaderText = "PERSON_ROLLUP_3";
+            this.PERSON_ROLLUP_3.Name = "PERSON_ROLLUP_3";
+            this.PERSON_ROLLUP_3.ReadOnly = true;
+            this.PERSON_ROLLUP_3.Width = 136;
             // 
-            // Column10
+            // REQUEST_DATE
             // 
-            this.Column10.HeaderText = "Column10";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
+            this.REQUEST_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.REQUEST_DATE.HeaderText = "REQUEST_DATE";
+            this.REQUEST_DATE.Name = "REQUEST_DATE";
+            this.REQUEST_DATE.ReadOnly = true;
+            this.REQUEST_DATE.Width = 132;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(709, 410);
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(1513, 138);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 28);
+            this.button1.Size = new System.Drawing.Size(166, 35);
             this.button1.TabIndex = 10;
             this.button1.Text = "返回";
-            this.button1.UseVisualStyleBackColor = true;
+            this.toolTip1.SetToolTip(this.button1, "返回资源查询界面");
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(486, 125);
+            this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label2.Location = new System.Drawing.Point(804, 155);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 14);
+            this.label2.Size = new System.Drawing.Size(103, 18);
             this.label2.TabIndex = 11;
             this.label2.Text = "授权结果：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(198, 127);
+            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label3.Location = new System.Drawing.Point(458, 156);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 14);
+            this.label3.Size = new System.Drawing.Size(84, 18);
             this.label3.TabIndex = 12;
             this.label3.Text = "时间段：";
             // 
             // user_history
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::Project.Properties.Resources._3;
+            this.ClientSize = new System.Drawing.Size(1924, 878);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
@@ -261,6 +305,7 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "user_history";
             this.Text = "查询历史";
             this.Load += new System.EventHandler(this.user_history_Load);
@@ -295,19 +340,20 @@
         private System.Windows.Forms.Button button1;  // 返回查询界面按钮
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 时间;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 资源名称;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 操作类型;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 授权结果;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ACTION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TARGET_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERSON_BUSINESS_TITLE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERSON_BUSINESS_TITLE_DETAIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1PERSON_COMPANY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERSON_DEPTNAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERSON_JOB_CODE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERSON_JOB_FAMILY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERSON_LOCATION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERSON_MGR_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERSON_ROLLUP_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERSON_ROLLUP_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERSON_ROLLUP_3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn REQUEST_DATE;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -22,7 +22,7 @@ namespace Project
             Rule rule; //插入rule
 
             string[] now_string; //每一列
-            string ACTION;
+            int ACTION;
             int TARGET_NAME;
             int PERSON_BUSINESS_TITLE;
             int PERSON_BUSINESS_TITLE_DETAIL;
@@ -39,10 +39,7 @@ namespace Project
             {
 
                 now_string = str.Split(',');
-                if (Convert.ToInt32(now_string[0]) == 0)
-                    ACTION = "remove_access";
-                else
-                    ACTION = "add_access";
+                ACTION = Convert.ToInt32(now_string[0]);
                 TARGET_NAME = Convert.ToInt32(now_string[1]);
                 PERSON_BUSINESS_TITLE = Convert.ToInt32(now_string[2]);
                 PERSON_BUSINESS_TITLE_DETAIL = Convert.ToInt32(now_string[3]);
@@ -74,10 +71,7 @@ namespace Project
             FileStream fs = new FileStream(filepath, FileMode.Append);
             StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
 
-            if (rule.ACTION == "remove_access")
-                sw.Write("0" + ",");
-            else
-                sw.Write("1" + ",");
+            sw.Write(rule.ACTION.ToString() + ",");
             sw.Write(rule.TARGET_NAME.ToString() + ",");
             sw.Write(rule.PERSON_BUSINESS_TITLE.ToString() + ",");
             sw.Write(rule.PERSON_BUSINESS_TITLE_DETAIL.ToString() + ",");
@@ -89,7 +83,7 @@ namespace Project
             sw.Write(rule.PERSON_MGR_ID.ToString() + ",");
             sw.Write(rule.PERSON_ROLLUP_1.ToString() + ",");
             sw.Write(rule.PERSON_ROLLUP_2.ToString() + ",");
-            sw.Write(rule.PERSON_ROLLUP_3.ToString() + ",");
+            sw.WriteLine(rule.PERSON_ROLLUP_3.ToString());
             sw.Close();
         }
         /// <summary>
@@ -172,7 +166,106 @@ namespace Project
 
             sw.Close();
         }
+        /// <summary>
+        /// 读取挂起
+        /// </summary>
+        public void Get_hang()
+        {
+            string filepath = "..\\..\\hang.csv";
+            if (!File.Exists(filepath)) //没有规则文件 通过关联规则生成规则文件
+            {
+                return;
+            }
+            StreamReader mysr = new StreamReader(filepath, System.Text.Encoding.Default);
+            string str; //文件行
+            Hang hang;
 
+            string[] now_string; //每一列
+            int TARGET_NAME;
+            int PERSON_BUSINESS_TITLE;
+            int PERSON_BUSINESS_TITLE_DETAIL;
+            int PERSON_COMPANY;
+            int PERSON_DEPTNAME;
+            int PERSON_JOB_CODE;
+            int PERSON_JOB_FAMILY;
+            int PERSON_LOCATION;
+            int PERSON_MGR_ID;
+            int PERSON_ROLLUP_1;
+            int PERSON_ROLLUP_2;
+            int PERSON_ROLLUP_3;
+            DateTime REQUEST_DATE;
+
+            while ((str = mysr.ReadLine()) != null)
+            {
+                //System.Console.WriteLine(str);
+                now_string = str.Split(',');
+
+                //System.Console.WriteLine(now_string[0]);
+                TARGET_NAME = Convert.ToInt32(now_string[0]);
+                PERSON_BUSINESS_TITLE = Convert.ToInt32(now_string[1]);
+                PERSON_BUSINESS_TITLE_DETAIL = Convert.ToInt32(now_string[2]);
+                PERSON_COMPANY = Convert.ToInt32(now_string[3]);
+                PERSON_DEPTNAME = Convert.ToInt32(now_string[4]);
+                PERSON_JOB_CODE = Convert.ToInt32(now_string[5]);
+                PERSON_JOB_FAMILY = Convert.ToInt32(now_string[6]);
+                PERSON_LOCATION = Convert.ToInt32(now_string[7]);
+                PERSON_MGR_ID = Convert.ToInt32(now_string[8]);
+                PERSON_ROLLUP_1 = Convert.ToInt32(now_string[9]);
+                PERSON_ROLLUP_2 = Convert.ToInt32(now_string[10]);
+                PERSON_ROLLUP_3 = Convert.ToInt32(now_string[11]);
+                REQUEST_DATE = Convert.ToDateTime(now_string[12]);
+
+                hang = new Hang(TARGET_NAME, PERSON_BUSINESS_TITLE, PERSON_BUSINESS_TITLE_DETAIL, PERSON_COMPANY, PERSON_DEPTNAME, PERSON_JOB_CODE, PERSON_JOB_FAMILY,
+                              PERSON_LOCATION, PERSON_MGR_ID, PERSON_ROLLUP_1, PERSON_ROLLUP_2, PERSON_ROLLUP_3, REQUEST_DATE);
+
+                Static.hang_index.Add(hang);//写入ArrayList
+            }
+            mysr.Close();
+        }
+
+        /// <summary>
+        /// 追加挂起
+        /// </summary>
+        public void write_hang(Hang hang)
+        {
+            string filepath = "..\\..\\hang.csv"; // 文件路径
+            FileStream fs = new FileStream(filepath, FileMode.Append);
+            StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
+
+            sw.Write(hang.TARGET_NAME.ToString() + ",");
+            sw.Write(hang.PERSON_BUSINESS_TITLE.ToString() + ",");
+            sw.Write(hang.PERSON_BUSINESS_TITLE_DETAIL.ToString() + ",");
+            sw.Write(hang.PERSON_COMPANY.ToString() + ",");
+            sw.Write(hang.PERSON_DEPTNAME.ToString() + ",");
+            sw.Write(hang.PERSON_JOB_CODE.ToString() + ",");
+            sw.Write(hang.PERSON_JOB_FAMILY.ToString() + ",");
+            sw.Write(hang.PERSON_LOCATION.ToString() + ",");
+            sw.Write(hang.PERSON_MGR_ID.ToString() + ",");
+            sw.Write(hang.PERSON_ROLLUP_1.ToString() + ",");
+            sw.Write(hang.PERSON_ROLLUP_2.ToString() + ",");
+            sw.Write(hang.PERSON_ROLLUP_3.ToString() + ",");
+
+            sw.WriteLine(hang.REQUEST_DATE.ToString());
+            sw.Close();
+            return;
+        }
+
+        public void clear_hang()
+        {
+            string filepath = "..\\..\\hang.csv"; // 文件路径
+            if (File.Exists(filepath))
+            {
+                File.Delete(filepath);
+            }
+
+            //FileStream fs = new FileStream(filepath, FileMode.Create);
+            Static.hang_index.Clear();
+            filepath = "..\\..\\result.csv"; // 文件路径
+            if (File.Exists(filepath))
+            {
+                File.Delete(filepath);
+            }
+        }
 
     }
 }

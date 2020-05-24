@@ -94,6 +94,7 @@
     <Compile Include="first_use.Designer.cs">
       <DependentUpon>first_use.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hang.cs" />
     <Compile Include="IOStream.cs" />
     <Compile Include="Rule.cs" />
     <Compile Include="Query_history_operation.cs" />
@@ -261,6 +262,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\20166734_143517161001_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TIM图片20200521225551.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_20200521_225436.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timg-5.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timg-5%281%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\true.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_20200522_155922.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -53,9 +53,10 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(690, 406);
+            this.button3.Location = new System.Drawing.Point(920, 508);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 32);
+            this.button3.Size = new System.Drawing.Size(100, 40);
             this.button3.TabIndex = 5;
             this.button3.Text = "下一页";
             this.button3.UseVisualStyleBackColor = true;
@@ -65,9 +66,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(37, 37);
+            this.label1.Location = new System.Drawing.Point(49, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 20);
+            this.label1.Size = new System.Drawing.Size(142, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "已有规则：";
             // 
@@ -89,12 +91,13 @@
             this.Column7,
             this.Column8,
             this.Column9});
-            this.dataGridView1.Location = new System.Drawing.Point(41, 76);
+            this.dataGridView1.Location = new System.Drawing.Point(55, 95);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 30;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(724, 313);
+            this.dataGridView1.Size = new System.Drawing.Size(965, 391);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -183,9 +186,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(311, 24);
+            this.button2.Location = new System.Drawing.Point(415, 30);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 33);
+            this.button2.Size = new System.Drawing.Size(160, 41);
             this.button2.TabIndex = 8;
             this.button2.Text = "增加规则";
             this.button2.UseVisualStyleBackColor = true;
@@ -193,9 +197,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(677, 24);
+            this.button1.Location = new System.Drawing.Point(903, 30);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 33);
+            this.button1.Size = new System.Drawing.Size(117, 41);
             this.button1.TabIndex = 9;
             this.button1.Text = "返回";
             this.button1.UseVisualStyleBackColor = true;
@@ -204,9 +209,10 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(555, 406);
+            this.button4.Location = new System.Drawing.Point(740, 508);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 32);
+            this.button4.Size = new System.Drawing.Size(107, 40);
             this.button4.TabIndex = 10;
             this.button4.Text = "上一页";
             this.button4.UseVisualStyleBackColor = true;
@@ -214,17 +220,19 @@
             // 
             // ad_rules_ch_4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 562);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ad_rules_ch_4";
             this.Text = "规则管理";
+            this.Load += new System.EventHandler(this.ad_rules_ch_4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

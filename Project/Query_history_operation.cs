@@ -37,26 +37,50 @@ namespace Project
             IOStream myst = new IOStream();
             myst.write_query(now_query);
         }
-        public ArrayList return_query_history(string name) //获得用户的访问根据名称 重新写吧
+        public ArrayList return_query_history(int PERSON_BUSINESS_TITLE, int PERSON_BUSINESS_TITLE_DETAIL, int PERSON_COMPANY, int PERSON_DEPTNAME, int PERSON_JOB_CODE, int PERSON_JOB_FAMILY,
+                                        int PERSON_LOCATION, int PERSON_MGR_ID, int PERSON_ROLLUP_1, int PERSON_ROLLUP_2, int PERSON_ROLLUP_3) //获得用户的访问根据用户信息
         {
             ArrayList temp = new ArrayList();
             for(int i = 0; i < Static.query_history_index.Count; i ++)
             {
                 Query_history temp_query = (Query_history)Static.query_history_index[i];
-                if(temp_query.PERSON_MGR_ID.ToString() == name) //查询条件 这个已经不合适了
+                if ((temp_query.PERSON_BUSINESS_TITLE == PERSON_BUSINESS_TITLE ) &&
+                    (temp_query.PERSON_BUSINESS_TITLE_DETAIL == PERSON_BUSINESS_TITLE_DETAIL ) &&
+                    (temp_query.PERSON_COMPANY == PERSON_COMPANY ) &&
+                    (temp_query.PERSON_DEPTNAME == PERSON_DEPTNAME) &&
+                    (temp_query.PERSON_JOB_CODE == PERSON_JOB_CODE ) &&
+                    (temp_query.PERSON_JOB_FAMILY == PERSON_JOB_FAMILY ) &&
+                    (temp_query.PERSON_LOCATION == PERSON_LOCATION) &&
+                    (temp_query.PERSON_MGR_ID == PERSON_MGR_ID ) &&
+                    (temp_query.PERSON_ROLLUP_1 == PERSON_ROLLUP_1 ) &&
+                    (temp_query.PERSON_ROLLUP_2 == PERSON_ROLLUP_2 ) &&
+                    (temp_query.PERSON_ROLLUP_3 == PERSON_ROLLUP_3 )
+                   )
                 {
                     temp.Add(temp_query);
                 }
             }
             return temp;
         }
-        public ArrayList return_query_hang_history(string name)
+        public ArrayList return_query_hang_history(int PERSON_BUSINESS_TITLE, int PERSON_BUSINESS_TITLE_DETAIL, int PERSON_COMPANY, int PERSON_DEPTNAME, int PERSON_JOB_CODE, int PERSON_JOB_FAMILY,
+                                        int PERSON_LOCATION, int PERSON_MGR_ID, int PERSON_ROLLUP_1, int PERSON_ROLLUP_2, int PERSON_ROLLUP_3) //获得用户的访问根据用户信息
         {
             ArrayList temp = new ArrayList();
-            for (int i = 0; i < Static.hang.Count; i++)
+            for (int i = 0; i < Static.hang_index.Count; i++)
             {
-                Query_history temp_query = (Query_history)Static.hang[i];
-                if (temp_query.PERSON_MGR_ID.ToString() == name) //查询条件 这个已经不合适了
+                Hang temp_query = (Hang)Static.hang_index[i];
+                if ((temp_query.PERSON_BUSINESS_TITLE == PERSON_BUSINESS_TITLE) &&
+                    (temp_query.PERSON_BUSINESS_TITLE_DETAIL == PERSON_BUSINESS_TITLE_DETAIL) &&
+                    (temp_query.PERSON_COMPANY == PERSON_COMPANY) &&
+                    (temp_query.PERSON_DEPTNAME == PERSON_DEPTNAME) &&
+                    (temp_query.PERSON_JOB_CODE == PERSON_JOB_CODE) &&
+                    (temp_query.PERSON_JOB_FAMILY == PERSON_JOB_FAMILY) &&
+                    (temp_query.PERSON_LOCATION == PERSON_LOCATION) &&
+                    (temp_query.PERSON_MGR_ID == PERSON_MGR_ID) &&
+                    (temp_query.PERSON_ROLLUP_1 == PERSON_ROLLUP_1) &&
+                    (temp_query.PERSON_ROLLUP_2 == PERSON_ROLLUP_2) &&
+                    (temp_query.PERSON_ROLLUP_3 == PERSON_ROLLUP_3)
+                   )
                 {
                     temp.Add(temp_query);
                 }

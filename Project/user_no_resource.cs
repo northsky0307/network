@@ -21,5 +21,10 @@ namespace Project
         {
             this.Dispose();
         }
+
+        private void user_no_resource_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

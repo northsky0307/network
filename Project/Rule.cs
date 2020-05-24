@@ -8,7 +8,7 @@ namespace Project
 {
     class Rule
     {
-        public string ACTION;
+        public int ACTION;
         public int TARGET_NAME;
         public int PERSON_BUSINESS_TITLE;
         public int PERSON_BUSINESS_TITLE_DETAIL;
@@ -37,7 +37,7 @@ namespace Project
         /// <param name="PERSON_ROLLUP_1"></param>
         /// <param name="PERSON_ROLLUP_2"></param>
         /// <param name="PERSON_ROLLUP_3"></param>
-        public Rule(string ACTION, int TARGET_NAME, int PERSON_BUSINESS_TITLE, int PERSON_BUSINESS_TITLE_DETAIL, int PERSON_COMPANY, int PERSON_DEPTNAME, int PERSON_JOB_CODE, int PERSON_JOB_FAMILY,
+        public Rule(int ACTION, int TARGET_NAME, int PERSON_BUSINESS_TITLE, int PERSON_BUSINESS_TITLE_DETAIL, int PERSON_COMPANY, int PERSON_DEPTNAME, int PERSON_JOB_CODE, int PERSON_JOB_FAMILY,
                              int PERSON_LOCATION, int PERSON_MGR_ID, int PERSON_ROLLUP_1, int PERSON_ROLLUP_2, int PERSON_ROLLUP_3) //构造函数
         {
             this.ACTION = ACTION;

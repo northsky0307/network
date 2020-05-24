@@ -15,6 +15,9 @@ namespace Project
         public admin_func_choose()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -54,6 +57,11 @@ namespace Project
             ad_rules_join form = new ad_rules_join();
             form.Show();
             this.Dispose();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

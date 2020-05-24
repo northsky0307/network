@@ -24,8 +24,8 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
 
         {
-            user_query return_user_query = new user_query();
-            return_user_query.Show();
+            //user_query return_user_query = new user_query();
+           // return_user_query.Show();
             this.Dispose();
 
         }

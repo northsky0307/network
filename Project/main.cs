@@ -27,7 +27,7 @@ namespace Project
                 p.WaitForExit();//关键，等待外部程序退出后才能往下执行
                 
             }
-
+            my_iostream.Get_hang(); //读取挂起
             my_iostream.Get_rule(); //读取规则
             my_iostream.Get_query(); // 读取访问记录
             Sign_in sign_In = new Sign_in();

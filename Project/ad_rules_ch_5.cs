@@ -15,6 +15,9 @@ namespace Project
         public ad_rules_ch_5()
         {
             InitializeComponent();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
             for (int i = 12001; i < 15000/*Static.rule_index.Count*/; i++)
             {
@@ -83,6 +86,11 @@ namespace Project
             {
                 dataGridView1.Rows.RemoveAt(e.RowIndex);
             }
+        }
+
+        private void ad_rules_ch_5_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
