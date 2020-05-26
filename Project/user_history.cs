@@ -38,22 +38,38 @@ namespace Project
 
                 Query_history query_out_his = (Query_history)query[i];
                 int index = this.dataGridView1.Rows.Add();
-
+                
                 this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.ACTION;  //授权结果
                 this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.TARGET_NAME;   //资源名称
-                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE;
-                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
-                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_COMPANY;
-                this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_DEPTNAME;
-                this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_JOB_CODE;
-                this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_JOB_FAMILY;
-                this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_LOCATION;
-                this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_MGR_ID;
-                this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_ROLLUP_1;
-                this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_2;
-                this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_3;
-                this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.REQUEST_DATE;
-
+                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.REQUEST_DATE;
+                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_COMPANY;
+                this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_DEPTNAME;
+                this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_JOB_CODE;
+                this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_FAMILY;
+                this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_LOCATION;
+                this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_MGR_ID;
+                this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_1;
+                this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_2;
+                this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_3;
+                
+                /*
+                this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.ACTION;  //授权结果
+                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.TARGET_NAME;   //资源名称
+                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.REQUEST_DATE;
+                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_MGR_ID;
+                this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_1;
+                this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_2;
+                this.dataGridView1.Rows[index].Cells[14].Value = query_out_his.PERSON_ROLLUP_3;
+                */
             }
             // System.Console.WriteLine(Static.query_history_index.Count);
         }
@@ -78,7 +94,8 @@ namespace Project
         }
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.ReadOnly = true; 
+            //dataGridView1.ReadOnly = true; 
+
         }
 
         private void button2_Click(object sender, EventArgs e)

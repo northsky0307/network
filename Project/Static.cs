@@ -15,6 +15,8 @@ namespace Project
         public static ArrayList hang_index = new ArrayList();//挂起访问
         public static ArrayList user_index = new ArrayList();//用户信息
 
+        public static int targetnum;
+
         public static string PERSON_BUSINESS_TITLE;
         public static string PERSON_BUSINESS_TITLE_DETAIL;
         public static string PERSON_COMPANY;

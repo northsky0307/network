@@ -125,11 +125,16 @@ namespace Project
                 }
                 else if (result == "hang")
                 {
+
+                    Static.targetnum = TARGET_NAMEnum;
+                    user_no_limit_hang error_tip = new user_no_limit_hang();
+                    error_tip.Show();
+                    /*
                     user_no_rule error_tip = new user_no_rule();
                     error_tip.Show();
                     //增加一条挂起访问记录 arraylist
                     Hang hAng = new Hang();
-                    hAng.Add_hang(/*comboBox1.Text*/TARGET_NAMEnum,
+                    hAng.Add_hang(TARGET_NAMEnum,
                    Convert.ToInt32(Static.PERSON_BUSINESS_TITLE),
                    Convert.ToInt32(Static.PERSON_BUSINESS_TITLE_DETAIL),
                    Convert.ToInt32(Static.PERSON_COMPANY),
@@ -145,6 +150,7 @@ namespace Project
                     IOStream iOStream = new IOStream();
                     iOStream.write_hang(hAng);
                     System.Console.WriteLine(Static.hang_index.Count);
+                    */
                 }
                 else if (result == "no_resource")
                 {

@@ -139,6 +139,9 @@ namespace Project
             Process p = Process.Start(path);
             p.WaitForExit();//关键，等待外部程序退出后才能往下执行
             Static.rule_index.Clear();
+
+            ad_ch_success form = new ad_ch_success();
+            form.Show();
             IOStream iO = new IOStream();
             iO.Get_rule();
         }
