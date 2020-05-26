@@ -60,7 +60,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("楷体", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.Aqua;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(998, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -154,6 +154,7 @@
             this.ACTION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.ACTION.Frozen = true;
             this.ACTION.HeaderText = "ACTION";
+            this.ACTION.MinimumWidth = 6;
             this.ACTION.Name = "ACTION";
             this.ACTION.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ACTION.Width = 84;
@@ -163,6 +164,7 @@
             this.TARGET_NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.TARGET_NAME.Frozen = true;
             this.TARGET_NAME.HeaderText = "TARGET_NAME";
+            this.TARGET_NAME.MinimumWidth = 6;
             this.TARGET_NAME.Name = "TARGET_NAME";
             this.TARGET_NAME.Width = 124;
             // 
@@ -170,18 +172,21 @@
             // 
             this.PERSON_BUSINESS_TITLE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.PERSON_BUSINESS_TITLE.HeaderText = "PERSON_BUSINESS_TITLE";
+            this.PERSON_BUSINESS_TITLE.MinimumWidth = 6;
             this.PERSON_BUSINESS_TITLE.Name = "PERSON_BUSINESS_TITLE";
             this.PERSON_BUSINESS_TITLE.Width = 180;
             // 
             // PERSON_BUSINESS_TITLE_DETAIL
             // 
             this.PERSON_BUSINESS_TITLE_DETAIL.HeaderText = "PERSON_BUSINESS_TITLE_DETAIL";
+            this.PERSON_BUSINESS_TITLE_DETAIL.MinimumWidth = 6;
             this.PERSON_BUSINESS_TITLE_DETAIL.Name = "PERSON_BUSINESS_TITLE_DETAIL";
             this.PERSON_BUSINESS_TITLE_DETAIL.Width = 240;
             // 
             // Column1PERSON_COMPANY
             // 
             this.Column1PERSON_COMPANY.HeaderText = "PERSON_COMPANY";
+            this.Column1PERSON_COMPANY.MinimumWidth = 6;
             this.Column1PERSON_COMPANY.Name = "Column1PERSON_COMPANY";
             this.Column1PERSON_COMPANY.ReadOnly = true;
             this.Column1PERSON_COMPANY.Width = 128;
@@ -189,6 +194,7 @@
             // PERSON_DEPTNAME
             // 
             this.PERSON_DEPTNAME.HeaderText = "PERSON_DEPTNAME";
+            this.PERSON_DEPTNAME.MinimumWidth = 6;
             this.PERSON_DEPTNAME.Name = "PERSON_DEPTNAME";
             this.PERSON_DEPTNAME.ReadOnly = true;
             this.PERSON_DEPTNAME.Width = 136;
@@ -196,6 +202,7 @@
             // PERSON_JOB_CODE
             // 
             this.PERSON_JOB_CODE.HeaderText = "PERSON_JOB_CODE";
+            this.PERSON_JOB_CODE.MinimumWidth = 6;
             this.PERSON_JOB_CODE.Name = "PERSON_JOB_CODE";
             this.PERSON_JOB_CODE.ReadOnly = true;
             this.PERSON_JOB_CODE.Width = 136;
@@ -203,6 +210,7 @@
             // PERSON_JOB_FAMILY
             // 
             this.PERSON_JOB_FAMILY.HeaderText = "PERSON_JOB_FAMILY";
+            this.PERSON_JOB_FAMILY.MinimumWidth = 6;
             this.PERSON_JOB_FAMILY.Name = "PERSON_JOB_FAMILY";
             this.PERSON_JOB_FAMILY.ReadOnly = true;
             this.PERSON_JOB_FAMILY.Width = 152;
@@ -210,6 +218,7 @@
             // PERSON_LOCATION
             // 
             this.PERSON_LOCATION.HeaderText = "PERSON_LOCATION";
+            this.PERSON_LOCATION.MinimumWidth = 6;
             this.PERSON_LOCATION.Name = "PERSON_LOCATION";
             this.PERSON_LOCATION.ReadOnly = true;
             this.PERSON_LOCATION.Width = 136;
@@ -217,6 +226,7 @@
             // PERSON_MGR_ID
             // 
             this.PERSON_MGR_ID.HeaderText = "PERSON_MGR_ID";
+            this.PERSON_MGR_ID.MinimumWidth = 6;
             this.PERSON_MGR_ID.Name = "PERSON_MGR_ID";
             this.PERSON_MGR_ID.ReadOnly = true;
             this.PERSON_MGR_ID.Width = 120;
@@ -224,6 +234,7 @@
             // PERSON_ROLLUP_1
             // 
             this.PERSON_ROLLUP_1.HeaderText = "PERSON_ROLLUP_1";
+            this.PERSON_ROLLUP_1.MinimumWidth = 6;
             this.PERSON_ROLLUP_1.Name = "PERSON_ROLLUP_1";
             this.PERSON_ROLLUP_1.ReadOnly = true;
             this.PERSON_ROLLUP_1.Width = 136;
@@ -231,6 +242,7 @@
             // PERSON_ROLLUP_2
             // 
             this.PERSON_ROLLUP_2.HeaderText = "PERSON_ROLLUP_2";
+            this.PERSON_ROLLUP_2.MinimumWidth = 6;
             this.PERSON_ROLLUP_2.Name = "PERSON_ROLLUP_2";
             this.PERSON_ROLLUP_2.ReadOnly = true;
             this.PERSON_ROLLUP_2.Width = 136;
@@ -238,6 +250,7 @@
             // PERSON_ROLLUP_3
             // 
             this.PERSON_ROLLUP_3.HeaderText = "PERSON_ROLLUP_3";
+            this.PERSON_ROLLUP_3.MinimumWidth = 6;
             this.PERSON_ROLLUP_3.Name = "PERSON_ROLLUP_3";
             this.PERSON_ROLLUP_3.ReadOnly = true;
             this.PERSON_ROLLUP_3.Width = 136;
@@ -246,6 +259,7 @@
             // 
             this.REQUEST_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.REQUEST_DATE.HeaderText = "REQUEST_DATE";
+            this.REQUEST_DATE.MinimumWidth = 6;
             this.REQUEST_DATE.Name = "REQUEST_DATE";
             this.REQUEST_DATE.ReadOnly = true;
             this.REQUEST_DATE.Width = 132;
@@ -275,7 +289,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 18);
-            this.label2.TabIndex = 11;
+            this.label2.TabIndex = 12;
             this.label2.Text = "授权结果：";
             // 
             // label3
@@ -295,7 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Project.Properties.Resources._3;
+            this.BackgroundImage = global::Project.Properties.Resources.center;
             this.ClientSize = new System.Drawing.Size(1924, 878);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
