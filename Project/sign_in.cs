@@ -24,7 +24,7 @@ namespace Project
         {
             //user_Datebase.Init();
             InitializeComponent();
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+           // this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
@@ -146,6 +146,11 @@ namespace Project
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
