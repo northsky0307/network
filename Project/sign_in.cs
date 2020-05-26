@@ -18,7 +18,7 @@ namespace Project
 
     public partial class Sign_in : Form//,IMyForm
     {
-        private User_datebase user_Datebase = new User_datebase();
+        private User_operation user_Datebase = new User_operation();
         //public static string name;
         public Sign_in()
         {
@@ -42,8 +42,8 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
 
-            Static.PERSON_BUSINESS_TITLE = textBox1.Text.Trim();
-
+            string ID = textBox1.Text.Trim();
+            /*
 
             //界面替换
             if (Static.PERSON_BUSINESS_TITLE != "-1") // MGR_ID 输入-1是admin
@@ -63,66 +63,36 @@ namespace Project
                 this.Hide();
                 System.Console.WriteLine("type : admin");
             }
-
-
-
-            /*
-
-            //string name = textBox1.Text.Trim();
-            //Static.PERSON_ROLLUP_2 = textBox1.Text.Trim();
-            System.Console.WriteLine("user name : " + Static.name);
-            //string pass = textBox2.Text.Trim();
-
-            //User_Information user = new User_Information("1", "1");
-            //string current_password = user_Datebase.Query_User_Information(name);///正常返回密码， 异常返回-1
-            string current_password = user_Datebase.Query_User_password(Static.name);///正常返回密码， 异常返回-1
-            int user_num = user_Datebase.Query_User_type(Static.name);
-            //user_Datebase.Add_User_Information();
-            System.Console.WriteLine("current_password : " + current_password);
-            if (current_password == "-1")
+            */
+            if (ID == "admin")
             {
-                //用户不存在
-                error_no_exist form = new error_no_exist();
+                admin_func_choose form = new admin_func_choose();
                 form.Show();
+                this.Hide();
+                System.Console.WriteLine("type : admin");
             }
             else
             {
-                if (pass == current_password)
+                User_operation user_Operation = new User_operation();
+
+                if (user_Operation.Query(ID))
                 {
-                    /*
-                     * //界面替换
+                    //界面替换
                     user_query form = new user_query();
-                    //Application.Run(form);
                     form.Show();
                     this.Hide();
-
-                    if (user_num == 0) // 用户
-                    {
-                        //界面替换
-                        user_query form = new user_query();
-                        form.Show();
-                        this.Hide();
-
-                        System.Console.WriteLine("type : user");
-                    }
-                    if (user_num == 1)
-                    {
-                        //admin
-                        admin_func_choose form = new admin_func_choose();
-                        form.Show();
-                        this.Hide();
-                        System.Console.WriteLine("type : admin");
-                    }
+                    System.Console.WriteLine("type : user");
 
                 }
                 else
                 {
-                    //密码错误
-                    error_password form = new error_password();
+                    //用户不存在
+                    error_no_exist form = new error_no_exist();
                     form.Show();
+
                 }
             }
-            */
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -154,7 +124,7 @@ namespace Project
 
         }
 
-      
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -164,8 +134,8 @@ namespace Project
         {
 
         }
-        
- private void label8_Click(object sender, EventArgs e)
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }
