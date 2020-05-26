@@ -85,19 +85,19 @@ namespace Project
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btnMDF" && e.RowIndex >= 0)  //单击修改
             {
-                Rule rule = new Rule((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value,
-                   (int)dataGridView1.Rows[e.RowIndex].Cells[1].Value,
-                    (int)dataGridView1.Rows[e.RowIndex].Cells[2].Value,
-                    (int)dataGridView1.Rows[e.RowIndex].Cells[3].Value,
-                    (int)dataGridView1.Rows[e.RowIndex].Cells[4].Value,
-                   (int)dataGridView1.Rows[e.RowIndex].Cells[5].Value,
-                   (int)dataGridView1.Rows[e.RowIndex].Cells[6].Value,
-                 (int)dataGridView1.Rows[e.RowIndex].Cells[7].Value,
-                 (int)dataGridView1.Rows[e.RowIndex].Cells[8].Value,
-                 (int)dataGridView1.Rows[e.RowIndex].Cells[9].Value,
-                 (int)dataGridView1.Rows[e.RowIndex].Cells[10].Value,
-                 (int)dataGridView1.Rows[e.RowIndex].Cells[11].Value,
-                 (int)dataGridView1.Rows[e.RowIndex].Cells[12].Value);
+                Rule rule = new Rule(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value),
+                   Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value),
+                    Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value),
+                    Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value),
+                    Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[4].Value),
+                   Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[5].Value),
+                   Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value),
+                 Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value),
+                 Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value),
+                 Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value),
+                 Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value),
+                 Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value),
+                 Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value));
 
                 Static.rule_index.RemoveAt(e.RowIndex);
                 Static.rule_index.Add(rule);

@@ -150,6 +150,7 @@ namespace Project
                 {
                     user_no_resource error_tip = new user_no_resource();
                     error_tip.Show();
+
                 }
 
             }
