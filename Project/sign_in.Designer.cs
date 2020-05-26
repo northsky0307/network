@@ -110,11 +110,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("宋体", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1143, 337);
+            this.label2.Location = new System.Drawing.Point(1211, 337);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(701, 67);
+            this.label2.Size = new System.Drawing.Size(565, 67);
             this.label2.TabIndex = 18;
-            this.label2.Text = "ABAC授权策略推荐工具";
+            this.label2.Text = "授权策略推荐工具";
             // 
             // label1
             // 
