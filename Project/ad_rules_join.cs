@@ -72,12 +72,14 @@ namespace Project
         private void button2_Click(object sender, EventArgs e)
         {
             string filepath = "..\\..\\hang.csv";
-            if (File.Exists(filepath)) 
+            if (File.Exists(filepath))
             {
                 string path = "..\\..\\ss.exe";
                 Process p = Process.Start(path);
                 p.WaitForExit();//关键，等待外部程序退出后才能往下执行
             }
+            else
+                return;
             string file_path = "..\\..\\result.csv";
 
             StreamReader mysr = new StreamReader(file_path, System.Text.Encoding.Default);
@@ -128,6 +130,17 @@ namespace Project
         private void ad_rules_join_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string path = "..\\..\\fp.exe";
+            first_use first_Use = new first_use();
+            Process p = Process.Start(path);
+            p.WaitForExit();//关键，等待外部程序退出后才能往下执行
+            Static.rule_index.Clear();
+            IOStream iO = new IOStream();
+            iO.Get_rule();
         }
     }
 }

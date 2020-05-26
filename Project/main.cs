@@ -25,6 +25,7 @@ namespace Project
                 Process p = Process.Start(path);
                 Application.Run(first_Use);
                 p.WaitForExit();//关键，等待外部程序退出后才能往下执行
+                //first_Use.Dispose();
                 
             }
             my_iostream.Get_hang(); //读取挂起

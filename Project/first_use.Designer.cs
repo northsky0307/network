@@ -50,9 +50,10 @@
             this.label3.Location = new System.Drawing.Point(266, 177);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(268, 27);
+            this.label3.Size = new System.Drawing.Size(223, 27);
             this.label3.TabIndex = 5;
-            this.label3.Text = "请耐心等待8~10分钟";
+            this.label3.Text = "请耐心等待1分钟";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // first_use
             // 
