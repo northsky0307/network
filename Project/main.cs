@@ -30,6 +30,7 @@ namespace Project
             my_iostream.Get_hang(); //读取挂起
             my_iostream.Get_rule(); //读取规则
             my_iostream.Get_query(); // 读取访问记录
+            my_iostream.Get_user();
             Sign_in sign_In = new Sign_in();
             Application.Run(sign_In);
         }

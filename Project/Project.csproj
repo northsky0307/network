@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="Hang.cs" />
     <Compile Include="IOStream.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Rule.cs" />
     <Compile Include="Query_history_operation.cs" />
     <Compile Include="Query_history.cs" />
@@ -125,14 +126,13 @@
     </Compile>
     <Compile Include="Rule_operation.cs" />
     <Compile Include="Static.cs" />
-    <Compile Include="User_datebase.cs" />
+    <Compile Include="User_operation.cs" />
     <Compile Include="user_do_search.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="user_do_search.Designer.cs">
       <DependentUpon>user_do_search.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Information.cs" />
     <Compile Include="user_history.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -250,7 +250,9 @@ namespace Project
             sw.Close();
             return;
         }
-
+        /// <summary>
+        /// 清空挂起
+        /// </summary>
         public void clear_hang()
         {
             string filepath = "..\\..\\hang.csv"; // 文件路径
@@ -267,6 +269,41 @@ namespace Project
                 File.Delete(filepath);
             }
         }
+        /// <summary>
+        /// 读取用户信息
+        /// </summary>
+        public void Get_user()
+        {
+            string filepath = "..\\..\\user_information.csv";
+            StreamReader mysr = new StreamReader(filepath, System.Text.Encoding.Default);
+            string str; //文件行
+            User user;
 
+
+            string[] now_string; //每一列
+
+            str = mysr.ReadLine();
+            while ((str = mysr.ReadLine()) != null)
+            {
+
+                now_string = str.Split(',');
+                user = new User(now_string[0],
+                    now_string[1],
+                    now_string[2],
+                    now_string[3],
+                    now_string[4],
+                    now_string[5],
+                    now_string[6],
+                    now_string[7],
+                    now_string[8],
+                    now_string[9],
+                    now_string[10],
+                    now_string[11]
+                    );
+                Static.user_index.Add(user);//写入ArrayList
+            }
+            mysr.Close();
+
+        }
     }
 }
