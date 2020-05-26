@@ -40,6 +40,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accept_change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="accept_change.Designer.cs">
+      <DependentUpon>accept_change.cs</DependentUpon>
+    </Compile>
     <Compile Include="ad_add_rules.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="accept_change.resx">
+      <DependentUpon>accept_change.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="admin_func_choose.resx">
       <DependentUpon>admin_func_choose.cs</DependentUpon>
     </EmbeddedResource>

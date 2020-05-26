@@ -140,14 +140,14 @@
             this.PERSON_ROLLUP_2,
             this.PERSON_ROLLUP_3});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(58, 182);
+            this.dataGridView1.Location = new System.Drawing.Point(54, 205);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1927, 588);
+            this.dataGridView1.Size = new System.Drawing.Size(1925, 500);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -229,10 +229,9 @@
             // PERSON_BUSINESS_TITLE_DETAIL
             // 
             this.PERSON_BUSINESS_TITLE_DETAIL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.PERSON_BUSINESS_TITLE_DETAIL.HeaderText = "商务头衔细节";
-            this.PERSON_BUSINESS_TITLE_DETAIL.MinimumWidth = 125;
+            this.PERSON_BUSINESS_TITLE_DETAIL.HeaderText = "头衔细节";
+            this.PERSON_BUSINESS_TITLE_DETAIL.MinimumWidth = 100;
             this.PERSON_BUSINESS_TITLE_DETAIL.Name = "PERSON_BUSINESS_TITLE_DETAIL";
-            this.PERSON_BUSINESS_TITLE_DETAIL.Width = 125;
             // 
             // Column1PERSON_COMPANY
             // 

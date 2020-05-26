@@ -32,20 +32,20 @@ namespace Project
 
                 int index = this.dataGridView1.Rows.Add();
 
-                //this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.ACTION;  //授权结果
-                this.dataGridView1.Rows[index].Cells[0].Value = query_out_his.TARGET_NAME;   //资源名称
-                this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.PERSON_BUSINESS_TITLE;
-                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
-                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.PERSON_COMPANY;
-                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_DEPTNAME;
-                this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_JOB_CODE;
-                this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_JOB_FAMILY;
-                this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_LOCATION;
-                this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_MGR_ID;
-                this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_ROLLUP_1;
-                this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_ROLLUP_2;
-                this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_ROLLUP_3;
-                this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.REQUEST_DATE;  //时间 
+                //this.dataGridView1.Rows[index].Cells[1].Value = query_out_his.ACTION;  //授权结果
+                this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.TARGET_NAME;   //资源名称
+                this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.REQUEST_DATE;
+                this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_MGR_ID;
+                this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_1;
+                this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_2;
+                this.dataGridView1.Rows[index].Cells[14].Value = query_out_his.PERSON_ROLLUP_3;
             }
 
 
@@ -95,6 +95,8 @@ namespace Project
               IOStream iOStream = new IOStream();
 
             int i = 0;
+
+            this.dataGridView1.Rows.Clear(); //清空列表
             while ((str = mysr.ReadLine()) != null)
             {
 
@@ -103,11 +105,29 @@ namespace Project
                 if(act == 1)
                 {
                     ACTION = "add_access";
-                        }
+
+                    Hang query_out_his = (Hang)Static.hang_index[i];
+
+                    int index = this.dataGridView1.Rows.Add();
+                    this.dataGridView1.Rows[index].Cells[1].Value = ACTION;  //授权结果
+                    this.dataGridView1.Rows[index].Cells[2].Value = query_out_his.TARGET_NAME;   //资源名称
+                    this.dataGridView1.Rows[index].Cells[3].Value = query_out_his.REQUEST_DATE;
+                    this.dataGridView1.Rows[index].Cells[4].Value = query_out_his.PERSON_BUSINESS_TITLE;
+                    this.dataGridView1.Rows[index].Cells[5].Value = query_out_his.PERSON_BUSINESS_TITLE_DETAIL;
+                    this.dataGridView1.Rows[index].Cells[6].Value = query_out_his.PERSON_COMPANY;
+                    this.dataGridView1.Rows[index].Cells[7].Value = query_out_his.PERSON_DEPTNAME;
+                    this.dataGridView1.Rows[index].Cells[8].Value = query_out_his.PERSON_JOB_CODE;
+                    this.dataGridView1.Rows[index].Cells[9].Value = query_out_his.PERSON_JOB_FAMILY;
+                    this.dataGridView1.Rows[index].Cells[10].Value = query_out_his.PERSON_LOCATION;
+                    this.dataGridView1.Rows[index].Cells[11].Value = query_out_his.PERSON_MGR_ID;
+                    this.dataGridView1.Rows[index].Cells[12].Value = query_out_his.PERSON_ROLLUP_1;
+                    this.dataGridView1.Rows[index].Cells[13].Value = query_out_his.PERSON_ROLLUP_2;
+                    this.dataGridView1.Rows[index].Cells[14].Value = query_out_his.PERSON_ROLLUP_3;
+
+                }
                 else
                 {
                     ACTION = "remove_access";
-                }
                 hang = (Hang)Static.hang_index[i];
                 query_History = new Query_history(ACTION, hang.TARGET_NAME, hang.PERSON_BUSINESS_TITLE, hang.PERSON_BUSINESS_TITLE_DETAIL, hang.PERSON_COMPANY, hang.PERSON_DEPTNAME, hang.PERSON_JOB_CODE, hang.PERSON_JOB_FAMILY,
                              hang.PERSON_LOCATION, hang.PERSON_MGR_ID, hang.PERSON_ROLLUP_1, hang.PERSON_ROLLUP_2, hang.PERSON_ROLLUP_3, hang.REQUEST_DATE); //构造函数
@@ -118,12 +138,14 @@ namespace Project
                              hang.PERSON_LOCATION, hang.PERSON_MGR_ID, hang.PERSON_ROLLUP_1, hang.PERSON_ROLLUP_2, hang.PERSON_ROLLUP_3); //构造函数
                 Static.rule_index.Add(rule);
                 iOStream.write_rule(rule);
+                }
                 i++;
             }
             mysr.Close();
-            this.dataGridView1.Rows.Clear();
+            //this.dataGridView1.Rows.Clear();
             iOStream.clear_hang();
-            ad_ch_success form = new ad_ch_success();
+            //ad_ch_success form = new ad_ch_success();
+            accept_change form = new accept_change();
             form.Show();
         }
 
@@ -144,6 +166,68 @@ namespace Project
             form.Show();
             IOStream iO = new IOStream();
             iO.Get_rule();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Query_history query_History;
+            Rule rule;
+            string ACTION;
+            IOStream iOStream = new IOStream();
+            for (int i = 0; i < dataGridView1.Rows.Count; i ++)
+            {
+                if(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value )== 0)
+                {
+                    ACTION = "add_access";
+                }
+                else
+                {
+
+                    ACTION = "remove_access";
+                }
+                Hang hang = new Hang
+                (Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value),
+                 Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value),
+                 Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value),
+                 Convert.ToInt32(dataGridView1.Rows[i].Cells[6].Value),
+                 Convert.ToInt32(dataGridView1.Rows[i].Cells[7].Value),
+                 Convert.ToInt32(dataGridView1.Rows[i].Cells[8].Value),
+                 Convert.ToInt32(dataGridView1.Rows[i].Cells[9].Value),
+                 Convert.ToInt32(dataGridView1.Rows[i].Cells[10].Value),
+                 Convert.ToInt32(dataGridView1.Rows[i].Cells[11].Value),
+                 Convert.ToInt32(dataGridView1.Rows[i].Cells[12].Value),
+                 Convert.ToInt32(dataGridView1.Rows[i].Cells[13].Value),
+                 Convert.ToInt32(dataGridView1.Rows[i].Cells[14].Value),
+                 Convert.ToDateTime(dataGridView1.Rows[i].Cells[3].Value));
+
+
+                query_History = new Query_history(ACTION, hang.TARGET_NAME, hang.PERSON_BUSINESS_TITLE, hang.PERSON_BUSINESS_TITLE_DETAIL, hang.PERSON_COMPANY, hang.PERSON_DEPTNAME, hang.PERSON_JOB_CODE, hang.PERSON_JOB_FAMILY,
+                             hang.PERSON_LOCATION, hang.PERSON_MGR_ID, hang.PERSON_ROLLUP_1, hang.PERSON_ROLLUP_2, hang.PERSON_ROLLUP_3, hang.REQUEST_DATE); //构造函数
+                Static.query_history_index.Add(query_History);
+                iOStream.write_query(query_History);
+
+                rule = new Rule(Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value), hang.TARGET_NAME, hang.PERSON_BUSINESS_TITLE, hang.PERSON_BUSINESS_TITLE_DETAIL, hang.PERSON_COMPANY, hang.PERSON_DEPTNAME, hang.PERSON_JOB_CODE, hang.PERSON_JOB_FAMILY,
+                             hang.PERSON_LOCATION, hang.PERSON_MGR_ID, hang.PERSON_ROLLUP_1, hang.PERSON_ROLLUP_2, hang.PERSON_ROLLUP_3); //构造函数
+                Static.rule_index.Add(rule);
+                iOStream.write_rule(rule);
+            }
+            ad_ch_success form = new ad_ch_success();
+            form.Show();
         }
     }
 }

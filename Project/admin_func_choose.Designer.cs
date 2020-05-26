@@ -62,7 +62,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 73);
             this.button2.TabIndex = 1;
-            this.button2.Text = "批量添加";
+            this.button2.Text = "批量处理";
             this.toolTip1.SetToolTip(this.button2, "系统推荐给您的访问授权策略");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);

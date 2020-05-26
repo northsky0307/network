@@ -28,16 +28,11 @@ namespace Project
             int PERSON_COMPANY = -1, int PERSON_DEPTNAME = -1, int PERSON_JOB_CODE = -1, int PERSON_JOB_FAMILY = -1,
             int PERSON_LOCATION = -1, int PERSON_MGR_ID = -1, int PERSON_ROLLUP_1 = -1, int PERSON_ROLLUP_2 = -1, int PERSON_ROLLUP_3 = -1)
         {
-            int count = 0;
+
             for (int i = 0; i < Static.rule_index.Count; i++)
             {
                 
                 Rule rule = (Rule)Static.rule_index[i];
-                
-                if(rule.TARGET_NAME == TARGET_NAME)
-                {
-                    count++;
-                }
                 if ((rule.TARGET_NAME == TARGET_NAME || rule.TARGET_NAME == -1) &&
                     (rule.PERSON_BUSINESS_TITLE == PERSON_BUSINESS_TITLE || rule.PERSON_BUSINESS_TITLE == -1) &&
                     (rule.PERSON_BUSINESS_TITLE_DETAIL == PERSON_BUSINESS_TITLE_DETAIL || rule.PERSON_BUSINESS_TITLE_DETAIL == -1) &&
@@ -53,6 +48,17 @@ namespace Project
                    )
                 {
                     return rule.ACTION == 0 ? "remove_access" : "add_access";
+                }
+            }
+            int count = 0;
+            for (int i = 0; i < Static.query_history_index.Count; i++)
+            {
+
+                Query_history query_History = (Query_history)Static.query_history_index[i];
+
+                if (query_History.TARGET_NAME == TARGET_NAME)
+                {
+                    count++;
                 }
             }
             if (count == 0) return "no_resource";
